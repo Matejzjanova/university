@@ -1,0 +1,68 @@
+
+\documentclass[a4paper,14pt]{report} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\setlength\parindent{1.25cm}
+\begin{document} 
+\Large
+\begin{titlepage}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            КУРСОВАЯ РАБОТА\\
+            по дисциплине <<Теоретические основы электротехники>>\\
+            Тема: <<исследование прохождения сигналов через линейную активную электрическую цепь>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}\\}
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Завьялов А. Е.} \\ 
+        \center Санкт-Петербург\\ 2024
+\end{titlepage}
+\begin{center}
+    {\bf АННОТАЦИЯ\\} 
+\end{center}
+    {
+        \indent Линейные электрические цепи играют ключевую роль в усилении и обработке сигналов, 
+    проходящих через них. Для анализа таких цепей применяются методы преобразования Лапласа, 
+    разложения в ряды Фурье и спектрального анализа. Изучение линейных цепей и сигналов, 
+    которые через них проходят, позволяет предсказывать поведение схем при воздействии на них периодических сигналов.
+    }
+\begin{center}
+    {\bf SUMMARY}
+\end{center}
+Linear electrical circuits are essential for amplifying and\\ processing the signals passing through them. 
+Methods such as Laplace transform, Fourier series decomposition, and spectrum analysis are used to analyze these circuits. 
+Studying linear circuits and the signals that pass through them allows for predicting the behavior of the circuit when subjected to certain periodic signals.
+\newpage
+\tableofcontents
+\newpage
+\section{\centeringВВЕДЕНИЕ}
+Цель курсовой работы – практическое освоение методов анализа искажений электрических сигналов, проходящих через линейные активные   RC~– цепи, а также рассмотрение вопросов проектирования активных RC – цепей по заданным передаточным функциям. 
+В курсовой работе требуется выполнить следующие пункты: \\  
+    \indent 1) найти по заданной передаточной функции реакцию активной RC-цепи при воздействии одиночного импульса; \\
+    \indent 2) рассчитать переходную и импульсную характеристики активной цепи;  \\
+    \indent 3) найти спектральные характеристики аналогового входного сигнала и частотные характеристики цепи;  \\
+    \indent 4) вычислить 	установившуюся 	реакцию 	цепи 	при 	воздействии 
+периодической последовательности импульсов;  \\
+    \indent 5) рассчитать параметры элементов активной цепи по заданной передаточной функции.
+\end{document}
