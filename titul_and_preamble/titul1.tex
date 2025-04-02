@@ -1,5 +1,10 @@
 
-\documentclass[a4paper,14pt]{report} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{/home/misha/VUZ/TOE/MATLAB}}
 \usepackage[russian]{babel} % задаёт русский как основной язык текста
 \usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
 \usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
@@ -12,9 +17,14 @@
 \geometry{bottom=2cm} % нижнее — 2 см
 \usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
 \usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection}{1em}{}
 \setlength\parindent{1.25cm}
 \begin{document} 
-\Large
 \begin{titlepage}
     \begin{center}
         {\bf  МИНОБРНАУКИ РОССИИ\\
@@ -36,13 +46,17 @@
     \vfill
         {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}\\}
         \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Завьялов А. Е.} \\ 
-        \center Санкт-Петербург\\ 2024
+        \center Санкт-Петербург
+        
+        2024
 \end{titlepage}
 \begin{center}
-    {\bf АННОТАЦИЯ\\} 
+    {\bf АННОТАЦИЯ} 
 \end{center}
+    
+
     {
-        \indent Линейные электрические цепи играют ключевую роль в усилении и обработке сигналов, 
+    Линейные электрические цепи играют ключевую роль в усилении и обработке сигналов, 
     проходящих через них. Для анализа таких цепей применяются методы преобразования Лапласа, 
     разложения в ряды Фурье и спектрального анализа. Изучение линейных цепей и сигналов, 
     которые через них проходят, позволяет предсказывать поведение схем при воздействии на них периодических сигналов.
@@ -50,19 +64,111 @@
 \begin{center}
     {\bf SUMMARY}
 \end{center}
+
+
 Linear electrical circuits are essential for amplifying and\\ processing the signals passing through them. 
 Methods such as Laplace transform, Fourier series decomposition, and spectrum analysis are used to analyze these circuits. 
 Studying linear circuits and the signals that pass through them allows for predicting the behavior of the circuit when subjected to certain periodic signals.
 \newpage
 \tableofcontents
 \newpage
-\section{\centeringВВЕДЕНИЕ}
+\section{ВВЕДЕНИЕ}
 Цель курсовой работы – практическое освоение методов анализа искажений электрических сигналов, проходящих через линейные активные   RC~– цепи, а также рассмотрение вопросов проектирования активных RC – цепей по заданным передаточным функциям. 
-В курсовой работе требуется выполнить следующие пункты: \\  
-    \indent 1) найти по заданной передаточной функции реакцию активной RC-цепи при воздействии одиночного импульса; \\
-    \indent 2) рассчитать переходную и импульсную характеристики активной цепи;  \\
-    \indent 3) найти спектральные характеристики аналогового входного сигнала и частотные характеристики цепи;  \\
-    \indent 4) вычислить 	установившуюся 	реакцию 	цепи 	при 	воздействии 
-периодической последовательности импульсов;  \\
-    \indent 5) рассчитать параметры элементов активной цепи по заданной передаточной функции.
+В курсовой работе требуется выполнить следующие пункты: 
+    \begin{enumerate}
+        \item Найти по заданной передаточной функции реакцию активной RC-цепи при воздействии одиночного импульса; 
+        \item Рассчитать переходную и импульсную характеристики активной цепи;  
+        \item Найти спектральные характеристики аналогового входного сигнала и частотные характеристики цепи;  
+        \item Вычислить 	установившуюся 	реакцию 	цепи 	при 	воздействии 
+        периодической последовательности импульсов;  
+        \item Рассчитать параметры элементов активной цепи по заданной передаточной функции.
+    \end{enumerate}
+    \newpage
+    \section{Нормирование параметров и переменных цепи}
+    Произведем нормировку переменных и параметров электрической \\ цепи:
+    \begin{table*}[h!]
+        \centering
+        \begin{tabularx}{\linewidth} { |>{\raggedright\arraybackslash}X | X | X |}
+            \hline
+           $ t_\text{и} = 2 \, \text{мс} $ & $ U_\text{m} = 3 \, \text{В} $ & $T = 2t_\text{и} = 4 \, \text{мс}$ \\ \hline
+           $ t_\text{б} = 1 \, \text{мс} $ & $ U_\text{б} = 1 \, \text{В} $ & $T_\text{б} = 1 \, \text{мс} $ \\ \hline 
+           $ t^*_\text{и} = \frac{t_\text{и}}{t_\text{б}} $ &  
+            $ U^*_\text{б} = \frac{U_\text{m}}{U_\text{б}} $ &
+            $ T^* = \frac{T }{T_\text{б}} $ \\ \hline
+            $ R_\text{б} = 10^{-5} \,\text{Ом}$ & $C_\text{б} = \frac{ t_\text{б}}{R_\text{б}} $ & $C^* = \frac{C}{C_\text{б}} $ \\
+            \hline
+        \end{tabularx}
+        \caption{Нормирование параметров цепи}
+        \label{table:1}
+    \end{table*}
+
+    \it{Замечание}\normalfont: все дальнейшие расчеты в курсовой работе выполняются с нормированными параметрами, поэтому для упрощения всех дальнейших записей знак (*) будет опускаться.
+    \section{Записать передаточную фикцию актовой RC-цепи с заданными коэффициентами. Рассчитать нули и полюсы заданной передаточной функции активной цепи. Изобразить координаты вычисленных нулей и полюсов на комплексной плоскости; найти приблизительную длительность свободного процесса в активной цепи по значению вещественной части полюсов}
+    Передаточная функция $H_U(S) = \frac{U_1(S)}{U_2(S)} = \frac{a_2S^2 + a_1S + a_0}{S^2 + b_1S+b_0}$\\
+    $a_1 = 0; a_2 = 0; a_0 = 5.52; b_1 = 2.2; b_0 = 4.4$;
+    $H_U(S) = \frac{5.52}{S^2 + 2.2S+ 4.4}$;
+    
+    Найдем полюсы передаточной функции: 
+        $S_1 = -1.1 + 1.77j; S_2 = -1.1 - 1.77j$.
+
+    Нулей у передаточной функции нет.
+
+
+    Изобразим полюсы на комплексной плоскости (рис. \ref{fig:1}):
+    \begin{figure}[H]
+        \includegraphics[width=0.65\textwidth]{poluses}
+        \centering
+        \caption{Полюсы передаточной функции}
+        \label{fig:1}
+    \end{figure} 
+    \section{Найти изображение входного одиночного импульса воздействия и вычислить реакцию активной RC-цепи операторным методом; построить график реакции; приближенно оценить время затухания переходных процессов в цепи.}
+    Найдем изображение импульса типа меандр (Рис. \ref{fig:2} )
+    \begin{figure}[H]
+        \includegraphics[width=0.65\textwidth]{imp}
+        \centering
+        \caption{Импульс меандр}
+        \label{fig:2}
+    \end{figure}
+    С учетом данных таблицы \ref{1}, временная функция этого импульса будет выглядеть так:
+    \begin{equation}
+        u_1(t) = 3\delta (t) - 6\delta(t-1) + 3\delta(t-2),
+    \end{equation}
+
+
+    тогда изображение этого импульса:
+    \begin{equation}
+        U_1(S) = \frac{1}{S}\left(3e^{-2S} - 6e^{-S} + 3\right). 
+    \end{equation}
+
+    Расчитаем реакцию цепи операторным методом:
+    \begin{multline}
+        U_2(S) = H(S)\cdot U_1(S) =  \frac{5.52}{S^2 + 2.2S+ 4.4}
+        \cdot \frac{1}{S}\left(3e^{-2S} - 6e^{-S} + 3\right) = \\
+        = \frac{5.52\cdot3}{S(S^2 + 2.2S+ 4.4)}\cdot e^{-2S} -
+        \frac{5.52\cdot6}{S(S^2 + 2.2S+ 4.4)}\cdot e^{-S} + \\
+        + \frac{5.52\cdot3}{S(S^2 + 2.2S+ 4.4)}
+    \end{multline}
+    После разложения на простейшие и перехода {\it t}-область:
+    \begin{multline}
+        u_2(t) = 33.12\delta_1(1.0t - 1.0)
+        (0.23e^{1.1 - 1.1t}(\cos(1.79t - 1.79) + \\
+        + 0.62\sin(1.79t - 1.79)) - 0.23) - 
+        3.76e^{-1.1t}(\cos(1.79t) + \\
+        + 0.62\sin(1.79t)) - 16.56\delta_1(t - 2)(0.23e^{2.2 - 1.1t}
+        (\cos(1.79t - 3.57) + \\
+        + 0.62\sin(1.79t - 3.57)) - 
+        0.23) + 3.76
+    \end{multline}
+    Построим график реакции:
+    \begin{figure}[H]
+        \includegraphics[width=0.8\textwidth]{react}
+        \centering
+        \caption{график реакции вместе с графиком воздействия}
+    \end{figure}
+    \section{Вычислить переходную и 
+    импульсную характеристики активной цепи по
+     заданной передаточной функции; построить их графики.}
+     
+
 \end{document}
+
