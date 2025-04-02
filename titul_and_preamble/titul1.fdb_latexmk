@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743577880.26674 "/home/misha/VUZ/TOE/titul_and_preamble/titul1.tex" "titul1.pdf" "titul1" 1743577880.78076 0
+["pdflatex"] 1743586792.80333 "/home/misha/VUZ/TOE/titul_and_preamble/titul1.tex" "titul1.pdf" "titul1" 1743586793.31599 0
   "/etc/texmf/web2c/texmf.cnf" 1739540513.37843 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/misha/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1742373440.58042 3304 6a543c07045572737981351171e0505e ""
   "/home/misha/.texlive2023/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm" 1742895643.02669 3256 b15a2ce2310c0038b96c5235b038f0eb ""
@@ -9,7 +9,7 @@
   "/home/misha/VUZ/TOE/MATLAB/imp.jpg" 1743054081.88039 17373 c2083a90e7ee8b556dcfc29f1f7dcfd5 ""
   "/home/misha/VUZ/TOE/MATLAB/poluses.jpg" 1742998315.35799 19615 e559a4aa4e092a03f5190c4e814633b1 ""
   "/home/misha/VUZ/TOE/MATLAB/react.jpg" 1743577613.27232 27911 ff8292a8d18b5272854ed6e21e2db22d ""
-  "/home/misha/VUZ/TOE/titul_and_preamble/titul1.tex" 1743577879.54643 10815 ef76fb41b0eb0064749b621031438e41 ""
+  "/home/misha/VUZ/TOE/titul_and_preamble/titul1.tex" 1743586792.04119 10822 4f80efe8ba9cff46f5f91ca8900a7b5d ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -93,9 +93,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742908774.28666 5351674 aa118e65e0c9fd7744ab3667596d0dc7 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1742908815 6907816 b2d9fe3d6a8472216dbbf9b773258e29 ""
-  "titul1.aux" 1743577880.70644 3605 9531c858c06a6732edd3e87f583dca49 "pdflatex"
-  "titul1.tex" 1743577879.54643 10815 ef76fb41b0eb0064749b621031438e41 ""
-  "titul1.toc" 1743577880.70744 1501 709344d158e2e3196e79348cf47ddf67 "pdflatex"
+  "titul1.aux" 1743586793.2412 3606 751b5d170a32f5ec899c3e98f93e33f8 "pdflatex"
+  "titul1.tex" 1743586792.04119 10822 4f80efe8ba9cff46f5f91ca8900a7b5d ""
+  "titul1.toc" 1743586793.2412 1502 dbf5ed023569f55ca0c190ecd50e85e3 "pdflatex"
   (generated)
   "titul1.aux"
   "titul1.log"
