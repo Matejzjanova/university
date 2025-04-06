@@ -210,8 +210,37 @@ Studying linear circuits and the signals that pass through them allows for predi
         \frac{|6e^{jw}\sin^2\left(\frac12w\right)
         |}{w} 
     \end{equation}
-    \begin{equation*}
-        A(w)|_{w=0}=12
-    \end{equation*}
+    \begin{multline*}
+        A(w)|_{w=0}=\lim\limits_{w \to 0}
+        \frac{|6e^{jw}\sin^2\left(\frac12w\right)
+        |}{w} = \lim\limits_{w \to 0}
+        \frac{\left(6\sin^2\left(\frac12w\right)\right)'
+        }{1} = \\
+        = \lim\limits_{w \to 0}6\left(2sin\left(\frac12w\right)
+        \frac12\cos\left(\frac12w\right)\right) = 0
+    \end{multline*}
+    \indent Значение спектрально плотности в нуле равно площади импульса, 
+    что выполняется, т. к. алгебраическая площадь меандра равна нулю,\
+    что видно из рис. \ref{fig:1}
+    \begin{multline}
+        \Phi(w) = \arg\left(
+            -\frac{6}{w}e^{-jw}\sin^2\left(\frac12w\right)
+            \right) = \\ = \arg\left(-e^{-jw}\sin^2\left(\frac12w\right)\right) = 
+            \pi - w.
+    \end{multline}
+    \indent Построим графики амплитудной и фазовой спектральной плотности:
+    \begin{figure}[H]
+        \includegraphics[width=0.8\textwidth]{awpw}
+        \centering
+        \caption{амплитудный и фазовый спектры одиночного импульса-меандра}
+        \label{fig:6}
+    \end{figure}
+    \newpage
+    \section{Определить амплитудный и фазовый спектры периодического 
+    входного сигнала;
+     ограничиться 10 гармониками разложения сигнала в ряд Фурье; 
+     построить графики исходного входного периодического сигнала и сигнала, представленного рядом Фурье 
+    (изобразить отдельно 3 первые составляющие ряда).}
+    
 \end{document}
 

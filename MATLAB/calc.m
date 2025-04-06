@@ -43,19 +43,23 @@ figure;
 fplot(h(t)); grid on; 
 xlabel("t"); 
 ylabel("h(t)")
-%% АЧХ ФЧХ;
+%% АЧХ Ф
+syms t;
+syms S;
 u1(t) = 3*heaviside(t) - 6*heaviside(t-1) + 3*heaviside(t-2);
 U1(S) = laplace(u1(t));
 syms w;
+A(w) = 6*(sin(1/2*w))^2/w;
+F(w) = angle(-6*exp(-1i*w)*(sin(1/2*w)^2));
 figure
 subplot(2,1,1)
-fplot(abs(U1(1*i*w)), [0 10])
+fplot(A(w), [0 25]); xlabel("A(w)"); ylabel("w"); grid on;
 subplot(2,1,2)
-fplot(angle(U1(1i*w)))
+fplot(rad2deg(F(w)),([0 25])); xlabel("w"); ylabel("\Phi(w)"); grid on;
+%% pulsetran
+syms t;
+u1(t) = 3*heaviside(t) - 6*heaviside(t-1) + 3*heaviside(t-2);
+figure
+fplot(u1(mod(t, 4)), [0 20]); grid on; ylabel("u_1(t)"); xlabel("t")
 
-A(w) = abs(-6*exp(-1i*w)*(sin(1/2*w))^2)/w
-F(w) = angle(-6*exp(-1i*w)*(sin(1/2*w)))
-figure
-fplot(A(w), [0, 5])
-figure
-fplot(F(w), [0 25])
+u11 = [0 ]
