@@ -77,7 +77,7 @@ stem(W, rad2deg(F2));
 
 syms t;
 c(t) = cos(W*t + F2);
-h(t) = 2/T*A2.*c(t);
+h(t) = A2.*c(t);
 u1(t) = sum(h(t));
 figure;
 fplot(t, u1(t), [0 10])

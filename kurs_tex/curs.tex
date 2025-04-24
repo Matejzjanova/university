@@ -203,7 +203,7 @@ Studying linear circuits and the signals that pass through them allows for predi
         U_1(jw) = U_1(S)|_{jw} = \frac{1}{jw}\left(3e^{-2jw} - 6e^{-jw} + 3\right) = \\ 
          = \frac{3}{jw}e^{-jw}(e^{-jw} - 2 + e^{jw}) = 
          \frac{3}{jw}e^{-jw}\left(e^{-\frac{1}{2}jw} - e^{\frac12jw}\right)^2 = \\
-         = j\frac{6}{w}e^{-jw}\sin^2\left(\frac12w\right)
+         = j\frac{12}{w}e^{-jw}\sin^2\left(\frac12w\right)
     \end{multline} 
     \begin{equation}
         A(w) = \left| U_1(jw)\right| = 
@@ -212,11 +212,11 @@ Studying linear circuits and the signals that pass through them allows for predi
     \end{equation}
     \begin{multline*}
         A(w)|_{w=0}=\lim\limits_{w \to 0}
-        \frac{|j6e^{jw}\sin^2\left(\frac12w\right)
+        \frac{|j12e^{jw}\sin^2\left(\frac12w\right)
         |}{w} = \lim\limits_{w \to 0}
-        \frac{\left(6\sin^2\left(\frac12w\right)\right)'
+        \frac{\left(12\sin^2\left(\frac12w\right)\right)'
         }{1} = \\
-        = \lim\limits_{w \to 0}6\left(2sin\left(\frac12w\right)
+        = \lim\limits_{w \to 0}12\left(2sin\left(\frac12w\right)
         \frac12\cos\left(\frac12w\right)\right) = 0
     \end{multline*}
     \indent Значение спектрально плотности в нуле равно площади импульса, 
@@ -224,7 +224,7 @@ Studying linear circuits and the signals that pass through them allows for predi
     что видно из рис. \ref{fig:1}
     \begin{multline}
         \Phi(w) = \arg\left(
-            j\frac{6}{w}e^{-jw}\sin^2\left(\frac12w\right)
+            j\frac{12}{w}e^{-jw}\sin^2\left(\frac12w\right)
             \right) = \\ = \arg\left(je^{-jw}\sin^2\left(\frac12w\right)\right) = 
             \frac{\pi}2 - w.
     \end{multline}
