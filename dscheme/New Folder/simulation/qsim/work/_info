@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/misha/VUZ/5sem/dscheme/New Folder/simulation/qsim
+vd_l_ff
+Z1 !s110 1763351711
+!i10b 1
+!s100 JDR^7HhYG5i14zYbXoARI0
+IZiQ3QZWg];W?`P=^dmHAI2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1763351711
+Z4 8l32.vo
+Z5 Fl32.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1763351711.000000
+Z8 !s107 l32.vo|
+Z9 !s90 -work|work|l32.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vd_l_ff_vlg_vec_tst
+R1
+!i10b 1
+!s100 N_J`0D^GN?k2Z]d6mLjC]3
+IMKbB0J<cJ;IdbONAVo6]m3
+R2
+R0
+w1763351710
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+vhard_block
+R1
+!i10b 1
+!s100 `=_RUZeo8ZB63WGjBk`Ac1
+Ij;DLI90z:PQQ43l7NKGCF1
+R2
+R0
+R3
+R4
+R5
+L0 107
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

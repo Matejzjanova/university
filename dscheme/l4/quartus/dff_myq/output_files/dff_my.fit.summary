@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Nov 30 21:42:12 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : dff_my
+Top-level Entity Name : dff_my
+Family : Cyclone IV E
+Device : EP4CE6E22A7
+Timing Models : Final
+Total logic elements : 1 / 6,272 ( < 1 % )
+    Total combinational functions : 1 / 6,272 ( < 1 % )
+    Dedicated logic registers : 1 / 6,272 ( < 1 % )
+Total registers : 1
+Total pins : 4 / 92 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

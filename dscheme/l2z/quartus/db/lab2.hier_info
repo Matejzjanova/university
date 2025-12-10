@@ -1,0 +1,10 @@
+|simple
+a1 => y.IN0
+a2 => y.IN1
+a2 => y.IN0
+a3 => ~NO_FANOUT~
+a4 => y.IN1
+a4 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

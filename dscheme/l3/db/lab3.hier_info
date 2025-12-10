@@ -1,0 +1,7 @@
+|ff1
+q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+R => inst1.IN0
+not_S => inst.IN1
+not_q <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+
+

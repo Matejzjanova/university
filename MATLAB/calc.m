@@ -10,21 +10,34 @@ figure(1)
 xlabel('Re')
 ylabel('Im')
 %% Импульс и его изображение
+set(groot, 'DefaultAxesFontSize', 12);            % Размер шрифта цифр градации
+set(groot, 'DefaultAxesLabelFontSizeMultiplier', 1.2);  % Множитель для подписей осей
+warning("off")
 syms s;
 frac = 5.52/(s^2 + 2.2*s + 4.4);
 syms t;
 u1(t) = 3*heaviside(t) - 6*heaviside(t-1) + 3*heaviside(t-2);
-fplot(u1, [0, 3]); grid on; 
+fplot(u1, [0, 4]); grid on; ylim([-4 4])
 xlabel("t"); ylabel("U");
 imp_image  = laplace(u1(t))
-u22(t) = vpa(ilaplace(frac*imp_image)); 
-u22_periodic = u22(t) + u22(t-4)*heaviside(t-4);
+% frac*imp_image;
+u22(t) = vpa(ilaplace(frac*imp_image), 3);
+vpa(ilaplace(frac*imp_image), 2)
+u22_periodic = u22(t);
 figure(2)
 fplot(u22_periodic, [0 7]); grid on; hold on
 fplot(u1(t), [0 7]);
-ylabel(["u2(t)" "u1(t)"])
+ylabel(["u(t)"])
 xlabel("t")
-legend("u2(t)", "u1(t)")
+legend("u_2(t)", "u_1(t)")
+%% 
+syms s t;
+frac1 = 5.52*3/s/(s^2 + 2.2*s + 4.4);
+part1(t) = vpa(ilaplace(frac1), 3)
+part2(t) = -vpa(ilaplace(frac1*2), 3);
+part3(t) = part1;
+u2 = part1(t)*heaviside(t) + part2(t-1)*heaviside(t-1) + part3(t-2)*heaviside(t-2);
+fplot(u2);
 %% Передаточная функция и остальное
 syms S;
 H1(S) = 5.52/(S*(S^2 + 2.2*S + 4.4));
@@ -32,18 +45,20 @@ b = [5.52];
 a = [1 2.2 4.4 0];
 [coeffs roots] = residue(b,a);
 syms t
-h1(t) = vpa(ilaplace(H1));
+h1(t) = vpa(ilaplace(H1), 2);
 figure;
 fplot(h1, [0 10]); grid on
-xlabel("t"); ylabel("h1(t)")
+xlabel("t"); ylabel("h_1(t)")
 
 
 %% ИХ ФЧХ АЧХ
+
+set(groot, 'DefaultAxesLineWidth',0.5);
 syms S t;
 H(S) = 5.52/(S^2 + 2.2*S + 4.4);
-h(t) = vpa(ilaplace(H(S)))
+h(t) = vpa(ilaplace(H(S)))*heaviside(t)
 figure;
-fplot(h(t)); grid on; 
+h_plot = fplot(h(t), [0 7]); grid on; 
 xlabel("t"); 
 ylabel("h(t)")
 
@@ -65,17 +80,18 @@ subplot(2,1,2)
 fplot(w, rad2deg(AF(w)), [0 10]); xlabel("\omega, Гц"); ylabel("\Phi(\omega)"); hold on; grid on; 
 plot([0 2.44], [0 -100], "--b", 'LineWidth', 1.5)
 t_delay = deg2rad(100)/2.44
-
-
+W_5 = [1 2 3 4 5];
+A_discr = AH(W_5);
+F_discr = AF(W_5);
 figure;
 TF = tf([5.52],[1 2.2 4.4]);
 [re, im, wout] = nyquist(TF);
 Re = squeeze(re); Im = squeeze(im);
 H3 = H(1i*wout);
-polarplot(angle(H3), abs(H3));
+polarplot(angle(H3), abs(H3)); hold on;
+polarplot(F_discr, A_discr, "o");
 text(0, max(rlim), 'A(\omega)', 'HorizontalAlignment', 'right');
 text(pi/2, max(rlim), '\Phi(\omega)', 'HorizontalAlignment', 'right');
-text(-pi/2, 1.10, "\omega=2.1", HorizontalAlignment="left");
 text(0.1, 1.2, "\omega=0", HorizontalAlignment="left");
     %% АЧХ Ф
 syms t;

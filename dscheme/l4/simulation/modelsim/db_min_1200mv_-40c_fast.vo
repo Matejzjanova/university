@@ -1,0 +1,3089 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "12/01/2025 21:48:45"
+
+// 
+// Device: Altera EP4CE115F23I7 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module lab3_new (
+	clk,
+	clk_JK,
+	J,
+	K,
+	rst_n_inp,
+	q);
+input 	clk;
+input 	clk_JK;
+input 	J;
+input 	K;
+input 	rst_n_inp;
+output 	q;
+
+// Design Ports Information
+// q	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// rst_n_inp	=>  Location: PIN_T2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_G1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// J	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// K	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk_JK	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("db_min_1200mv_-40c_v_fast.sdo");
+// synopsys translate_on
+
+wire \q~output_o ;
+wire \clk~input_o ;
+wire \clk~inputclkctrl_outclk ;
+wire \CLK_button|Button_cnt[0]~18_combout ;
+wire \rst_n_inp~input_o ;
+wire \rst_n_inp~inputclkctrl_outclk ;
+wire \clk_JK~input_o ;
+wire \CLK_button|Button_sync_0~0_combout ;
+wire \CLK_button|Button_sync_0~q ;
+wire \CLK_button|Button_sync_1~feeder_combout ;
+wire \CLK_button|Button_sync_1~q ;
+wire \CLK_button|comb~0_combout ;
+wire \CLK_button|Button_cnt[0]~19 ;
+wire \CLK_button|Button_cnt[1]~20_combout ;
+wire \CLK_button|Button_cnt[1]~21 ;
+wire \CLK_button|Button_cnt[2]~22_combout ;
+wire \CLK_button|Button_cnt[2]~23 ;
+wire \CLK_button|Button_cnt[3]~24_combout ;
+wire \CLK_button|Button_cnt[3]~25 ;
+wire \CLK_button|Button_cnt[4]~26_combout ;
+wire \CLK_button|Button_cnt[4]~27 ;
+wire \CLK_button|Button_cnt[5]~28_combout ;
+wire \CLK_button|Button_cnt[5]~29 ;
+wire \CLK_button|Button_cnt[6]~30_combout ;
+wire \CLK_button|Button_cnt[6]~31 ;
+wire \CLK_button|Button_cnt[7]~32_combout ;
+wire \CLK_button|Button_cnt[7]~33 ;
+wire \CLK_button|Button_cnt[8]~34_combout ;
+wire \CLK_button|Button_cnt[8]~35 ;
+wire \CLK_button|Button_cnt[9]~36_combout ;
+wire \CLK_button|Button_cnt[9]~37 ;
+wire \CLK_button|Button_cnt[10]~38_combout ;
+wire \CLK_button|Button_cnt[10]~39 ;
+wire \CLK_button|Button_cnt[11]~40_combout ;
+wire \CLK_button|Button_cnt[11]~41 ;
+wire \CLK_button|Button_cnt[12]~42_combout ;
+wire \CLK_button|Button_cnt[12]~43 ;
+wire \CLK_button|Button_cnt[13]~44_combout ;
+wire \CLK_button|Button_cnt[13]~45 ;
+wire \CLK_button|Button_cnt[14]~46_combout ;
+wire \CLK_button|Button_cnt[14]~47 ;
+wire \CLK_button|Button_cnt[15]~48_combout ;
+wire \CLK_button|Button_cnt[15]~49 ;
+wire \CLK_button|Button_cnt[16]~50_combout ;
+wire \CLK_button|Button_cnt[16]~51 ;
+wire \CLK_button|Button_cnt[17]~52_combout ;
+wire \CLK_button|Button_state~5_combout ;
+wire \CLK_button|Button_state~1_combout ;
+wire \CLK_button|Button_state~0_combout ;
+wire \CLK_button|Button_state~2_combout ;
+wire \CLK_button|Button_state~3_combout ;
+wire \CLK_button|Button_state~4_combout ;
+wire \CLK_button|Button_state~6_combout ;
+wire \CLK_button|Button_state~feeder_combout ;
+wire \CLK_button|Button_state~q ;
+wire \K_button|Button_cnt[0]~18_combout ;
+wire \K~input_o ;
+wire \K_button|Button_sync_0~0_combout ;
+wire \K_button|Button_sync_0~q ;
+wire \K_button|Button_sync_1~feeder_combout ;
+wire \K_button|Button_sync_1~q ;
+wire \K_button|comb~0_combout ;
+wire \K_button|Button_cnt[0]~19 ;
+wire \K_button|Button_cnt[1]~20_combout ;
+wire \K_button|Button_cnt[1]~21 ;
+wire \K_button|Button_cnt[2]~22_combout ;
+wire \K_button|Button_cnt[2]~23 ;
+wire \K_button|Button_cnt[3]~24_combout ;
+wire \K_button|Button_cnt[3]~25 ;
+wire \K_button|Button_cnt[4]~26_combout ;
+wire \K_button|Button_cnt[4]~27 ;
+wire \K_button|Button_cnt[5]~28_combout ;
+wire \K_button|Button_cnt[5]~29 ;
+wire \K_button|Button_cnt[6]~30_combout ;
+wire \K_button|Button_cnt[6]~31 ;
+wire \K_button|Button_cnt[7]~32_combout ;
+wire \K_button|Button_cnt[7]~33 ;
+wire \K_button|Button_cnt[8]~34_combout ;
+wire \K_button|Button_cnt[8]~35 ;
+wire \K_button|Button_cnt[9]~36_combout ;
+wire \K_button|Button_cnt[9]~37 ;
+wire \K_button|Button_cnt[10]~38_combout ;
+wire \K_button|Button_cnt[10]~39 ;
+wire \K_button|Button_cnt[11]~40_combout ;
+wire \K_button|Button_cnt[11]~41 ;
+wire \K_button|Button_cnt[12]~42_combout ;
+wire \K_button|Button_cnt[12]~43 ;
+wire \K_button|Button_cnt[13]~44_combout ;
+wire \K_button|Button_cnt[13]~45 ;
+wire \K_button|Button_cnt[14]~46_combout ;
+wire \K_button|Button_cnt[14]~47 ;
+wire \K_button|Button_cnt[15]~48_combout ;
+wire \K_button|Button_cnt[15]~49 ;
+wire \K_button|Button_cnt[16]~50_combout ;
+wire \K_button|Button_state~5_combout ;
+wire \K_button|Button_cnt[16]~51 ;
+wire \K_button|Button_cnt[17]~52_combout ;
+wire \K_button|Button_state~1_combout ;
+wire \K_button|Button_state~3_combout ;
+wire \K_button|Button_state~2_combout ;
+wire \K_button|Button_state~0_combout ;
+wire \K_button|Button_state~4_combout ;
+wire \K_button|Button_state~6_combout ;
+wire \K_button|Button_state~q ;
+wire \J_button|Button_cnt[0]~18_combout ;
+wire \J~input_o ;
+wire \J_button|Button_sync_0~0_combout ;
+wire \J_button|Button_sync_0~q ;
+wire \J_button|Button_sync_1~feeder_combout ;
+wire \J_button|Button_sync_1~q ;
+wire \J_button|comb~0_combout ;
+wire \J_button|Button_cnt[0]~19 ;
+wire \J_button|Button_cnt[1]~20_combout ;
+wire \J_button|Button_cnt[1]~21 ;
+wire \J_button|Button_cnt[2]~22_combout ;
+wire \J_button|Button_cnt[2]~23 ;
+wire \J_button|Button_cnt[3]~24_combout ;
+wire \J_button|Button_cnt[3]~25 ;
+wire \J_button|Button_cnt[4]~26_combout ;
+wire \J_button|Button_cnt[4]~27 ;
+wire \J_button|Button_cnt[5]~28_combout ;
+wire \J_button|Button_cnt[5]~29 ;
+wire \J_button|Button_cnt[6]~30_combout ;
+wire \J_button|Button_cnt[6]~31 ;
+wire \J_button|Button_cnt[7]~32_combout ;
+wire \J_button|Button_cnt[7]~33 ;
+wire \J_button|Button_cnt[8]~34_combout ;
+wire \J_button|Button_cnt[8]~35 ;
+wire \J_button|Button_cnt[9]~36_combout ;
+wire \J_button|Button_cnt[9]~37 ;
+wire \J_button|Button_cnt[10]~38_combout ;
+wire \J_button|Button_cnt[10]~39 ;
+wire \J_button|Button_cnt[11]~40_combout ;
+wire \J_button|Button_cnt[11]~41 ;
+wire \J_button|Button_cnt[12]~42_combout ;
+wire \J_button|Button_cnt[12]~43 ;
+wire \J_button|Button_cnt[13]~44_combout ;
+wire \J_button|Button_cnt[13]~45 ;
+wire \J_button|Button_cnt[14]~46_combout ;
+wire \J_button|Button_cnt[14]~47 ;
+wire \J_button|Button_cnt[15]~48_combout ;
+wire \J_button|Button_cnt[15]~49 ;
+wire \J_button|Button_cnt[16]~50_combout ;
+wire \J_button|Button_cnt[16]~51 ;
+wire \J_button|Button_cnt[17]~52_combout ;
+wire \J_button|Button_state~5_combout ;
+wire \J_button|Button_state~2_combout ;
+wire \J_button|Button_state~0_combout ;
+wire \J_button|Button_state~1_combout ;
+wire \J_button|Button_state~3_combout ;
+wire \J_button|Button_state~4_combout ;
+wire \J_button|Button_state~6_combout ;
+wire \J_button|Button_state~q ;
+wire \q~0_combout ;
+wire \q~reg0_q ;
+wire [17:0] \CLK_button|Button_cnt ;
+wire [17:0] \K_button|Button_cnt ;
+wire [17:0] \J_button|Button_cnt ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X81_Y73_N16
+cycloneive_io_obuf \q~output (
+	.i(\q~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\q~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \q~output .bus_hold = "false";
+defparam \q~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y36_N8
+cycloneive_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \clk~inputclkctrl .clock_type = "global clock";
+defparam \clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N14
+cycloneive_lcell_comb \CLK_button|Button_cnt[0]~18 (
+// Equation(s):
+// \CLK_button|Button_cnt[0]~18_combout  = \CLK_button|Button_cnt [0] $ (VCC)
+// \CLK_button|Button_cnt[0]~19  = CARRY(\CLK_button|Button_cnt [0])
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\CLK_button|Button_cnt[0]~18_combout ),
+	.cout(\CLK_button|Button_cnt[0]~19 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[0]~18 .lut_mask = 16'h33CC;
+defparam \CLK_button|Button_cnt[0]~18 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y36_N15
+cycloneive_io_ibuf \rst_n_inp~input (
+	.i(rst_n_inp),
+	.ibar(gnd),
+	.o(\rst_n_inp~input_o ));
+// synopsys translate_off
+defparam \rst_n_inp~input .bus_hold = "false";
+defparam \rst_n_inp~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G4
+cycloneive_clkctrl \rst_n_inp~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\rst_n_inp~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\rst_n_inp~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \rst_n_inp~inputclkctrl .clock_type = "global clock";
+defparam \rst_n_inp~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: IOIBUF_X81_Y73_N8
+cycloneive_io_ibuf \clk_JK~input (
+	.i(clk_JK),
+	.ibar(gnd),
+	.o(\clk_JK~input_o ));
+// synopsys translate_off
+defparam \clk_JK~input .bus_hold = "false";
+defparam \clk_JK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y56_N28
+cycloneive_lcell_comb \CLK_button|Button_sync_0~0 (
+// Equation(s):
+// \CLK_button|Button_sync_0~0_combout  = !\clk_JK~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\clk_JK~input_o ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\CLK_button|Button_sync_0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_sync_0~0 .lut_mask = 16'h0F0F;
+defparam \CLK_button|Button_sync_0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y56_N29
+dffeas \CLK_button|Button_sync_0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_sync_0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_sync_0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_sync_0 .is_wysiwyg = "true";
+defparam \CLK_button|Button_sync_0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y56_N24
+cycloneive_lcell_comb \CLK_button|Button_sync_1~feeder (
+// Equation(s):
+// \CLK_button|Button_sync_1~feeder_combout  = \CLK_button|Button_sync_0~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\CLK_button|Button_sync_0~q ),
+	.cin(gnd),
+	.combout(\CLK_button|Button_sync_1~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_sync_1~feeder .lut_mask = 16'hFF00;
+defparam \CLK_button|Button_sync_1~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y56_N25
+dffeas \CLK_button|Button_sync_1 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_sync_1~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_sync_1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_sync_1 .is_wysiwyg = "true";
+defparam \CLK_button|Button_sync_1 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y56_N18
+cycloneive_lcell_comb \CLK_button|comb~0 (
+// Equation(s):
+// \CLK_button|comb~0_combout  = \CLK_button|Button_state~q  $ (!\CLK_button|Button_sync_1~q )
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_state~q ),
+	.datac(gnd),
+	.datad(\CLK_button|Button_sync_1~q ),
+	.cin(gnd),
+	.combout(\CLK_button|comb~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|comb~0 .lut_mask = 16'hCC33;
+defparam \CLK_button|comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N15
+dffeas \CLK_button|Button_cnt[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[0]~18_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[0] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N16
+cycloneive_lcell_comb \CLK_button|Button_cnt[1]~20 (
+// Equation(s):
+// \CLK_button|Button_cnt[1]~20_combout  = (\CLK_button|Button_cnt [1] & (!\CLK_button|Button_cnt[0]~19 )) # (!\CLK_button|Button_cnt [1] & ((\CLK_button|Button_cnt[0]~19 ) # (GND)))
+// \CLK_button|Button_cnt[1]~21  = CARRY((!\CLK_button|Button_cnt[0]~19 ) # (!\CLK_button|Button_cnt [1]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[0]~19 ),
+	.combout(\CLK_button|Button_cnt[1]~20_combout ),
+	.cout(\CLK_button|Button_cnt[1]~21 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[1]~20 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[1]~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N17
+dffeas \CLK_button|Button_cnt[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[1]~20_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[1] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N18
+cycloneive_lcell_comb \CLK_button|Button_cnt[2]~22 (
+// Equation(s):
+// \CLK_button|Button_cnt[2]~22_combout  = (\CLK_button|Button_cnt [2] & (\CLK_button|Button_cnt[1]~21  $ (GND))) # (!\CLK_button|Button_cnt [2] & (!\CLK_button|Button_cnt[1]~21  & VCC))
+// \CLK_button|Button_cnt[2]~23  = CARRY((\CLK_button|Button_cnt [2] & !\CLK_button|Button_cnt[1]~21 ))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[1]~21 ),
+	.combout(\CLK_button|Button_cnt[2]~22_combout ),
+	.cout(\CLK_button|Button_cnt[2]~23 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[2]~22 .lut_mask = 16'hC30C;
+defparam \CLK_button|Button_cnt[2]~22 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N19
+dffeas \CLK_button|Button_cnt[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[2]~22_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[2] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N20
+cycloneive_lcell_comb \CLK_button|Button_cnt[3]~24 (
+// Equation(s):
+// \CLK_button|Button_cnt[3]~24_combout  = (\CLK_button|Button_cnt [3] & (!\CLK_button|Button_cnt[2]~23 )) # (!\CLK_button|Button_cnt [3] & ((\CLK_button|Button_cnt[2]~23 ) # (GND)))
+// \CLK_button|Button_cnt[3]~25  = CARRY((!\CLK_button|Button_cnt[2]~23 ) # (!\CLK_button|Button_cnt [3]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[2]~23 ),
+	.combout(\CLK_button|Button_cnt[3]~24_combout ),
+	.cout(\CLK_button|Button_cnt[3]~25 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[3]~24 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[3]~24 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N21
+dffeas \CLK_button|Button_cnt[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[3]~24_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[3] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N22
+cycloneive_lcell_comb \CLK_button|Button_cnt[4]~26 (
+// Equation(s):
+// \CLK_button|Button_cnt[4]~26_combout  = (\CLK_button|Button_cnt [4] & (\CLK_button|Button_cnt[3]~25  $ (GND))) # (!\CLK_button|Button_cnt [4] & (!\CLK_button|Button_cnt[3]~25  & VCC))
+// \CLK_button|Button_cnt[4]~27  = CARRY((\CLK_button|Button_cnt [4] & !\CLK_button|Button_cnt[3]~25 ))
+
+	.dataa(\CLK_button|Button_cnt [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[3]~25 ),
+	.combout(\CLK_button|Button_cnt[4]~26_combout ),
+	.cout(\CLK_button|Button_cnt[4]~27 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[4]~26 .lut_mask = 16'hA50A;
+defparam \CLK_button|Button_cnt[4]~26 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N23
+dffeas \CLK_button|Button_cnt[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[4]~26_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[4] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N24
+cycloneive_lcell_comb \CLK_button|Button_cnt[5]~28 (
+// Equation(s):
+// \CLK_button|Button_cnt[5]~28_combout  = (\CLK_button|Button_cnt [5] & (!\CLK_button|Button_cnt[4]~27 )) # (!\CLK_button|Button_cnt [5] & ((\CLK_button|Button_cnt[4]~27 ) # (GND)))
+// \CLK_button|Button_cnt[5]~29  = CARRY((!\CLK_button|Button_cnt[4]~27 ) # (!\CLK_button|Button_cnt [5]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[4]~27 ),
+	.combout(\CLK_button|Button_cnt[5]~28_combout ),
+	.cout(\CLK_button|Button_cnt[5]~29 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[5]~28 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[5]~28 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N25
+dffeas \CLK_button|Button_cnt[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[5]~28_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[5] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N26
+cycloneive_lcell_comb \CLK_button|Button_cnt[6]~30 (
+// Equation(s):
+// \CLK_button|Button_cnt[6]~30_combout  = (\CLK_button|Button_cnt [6] & (\CLK_button|Button_cnt[5]~29  $ (GND))) # (!\CLK_button|Button_cnt [6] & (!\CLK_button|Button_cnt[5]~29  & VCC))
+// \CLK_button|Button_cnt[6]~31  = CARRY((\CLK_button|Button_cnt [6] & !\CLK_button|Button_cnt[5]~29 ))
+
+	.dataa(\CLK_button|Button_cnt [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[5]~29 ),
+	.combout(\CLK_button|Button_cnt[6]~30_combout ),
+	.cout(\CLK_button|Button_cnt[6]~31 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[6]~30 .lut_mask = 16'hA50A;
+defparam \CLK_button|Button_cnt[6]~30 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N27
+dffeas \CLK_button|Button_cnt[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[6]~30_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[6] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N28
+cycloneive_lcell_comb \CLK_button|Button_cnt[7]~32 (
+// Equation(s):
+// \CLK_button|Button_cnt[7]~32_combout  = (\CLK_button|Button_cnt [7] & (!\CLK_button|Button_cnt[6]~31 )) # (!\CLK_button|Button_cnt [7] & ((\CLK_button|Button_cnt[6]~31 ) # (GND)))
+// \CLK_button|Button_cnt[7]~33  = CARRY((!\CLK_button|Button_cnt[6]~31 ) # (!\CLK_button|Button_cnt [7]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[6]~31 ),
+	.combout(\CLK_button|Button_cnt[7]~32_combout ),
+	.cout(\CLK_button|Button_cnt[7]~33 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[7]~32 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[7]~32 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N29
+dffeas \CLK_button|Button_cnt[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[7]~32_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[7] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N30
+cycloneive_lcell_comb \CLK_button|Button_cnt[8]~34 (
+// Equation(s):
+// \CLK_button|Button_cnt[8]~34_combout  = (\CLK_button|Button_cnt [8] & (\CLK_button|Button_cnt[7]~33  $ (GND))) # (!\CLK_button|Button_cnt [8] & (!\CLK_button|Button_cnt[7]~33  & VCC))
+// \CLK_button|Button_cnt[8]~35  = CARRY((\CLK_button|Button_cnt [8] & !\CLK_button|Button_cnt[7]~33 ))
+
+	.dataa(\CLK_button|Button_cnt [8]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[7]~33 ),
+	.combout(\CLK_button|Button_cnt[8]~34_combout ),
+	.cout(\CLK_button|Button_cnt[8]~35 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[8]~34 .lut_mask = 16'hA50A;
+defparam \CLK_button|Button_cnt[8]~34 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N31
+dffeas \CLK_button|Button_cnt[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[8]~34_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[8] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N0
+cycloneive_lcell_comb \CLK_button|Button_cnt[9]~36 (
+// Equation(s):
+// \CLK_button|Button_cnt[9]~36_combout  = (\CLK_button|Button_cnt [9] & (!\CLK_button|Button_cnt[8]~35 )) # (!\CLK_button|Button_cnt [9] & ((\CLK_button|Button_cnt[8]~35 ) # (GND)))
+// \CLK_button|Button_cnt[9]~37  = CARRY((!\CLK_button|Button_cnt[8]~35 ) # (!\CLK_button|Button_cnt [9]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[8]~35 ),
+	.combout(\CLK_button|Button_cnt[9]~36_combout ),
+	.cout(\CLK_button|Button_cnt[9]~37 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[9]~36 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[9]~36 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N1
+dffeas \CLK_button|Button_cnt[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[9]~36_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[9] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N2
+cycloneive_lcell_comb \CLK_button|Button_cnt[10]~38 (
+// Equation(s):
+// \CLK_button|Button_cnt[10]~38_combout  = (\CLK_button|Button_cnt [10] & (\CLK_button|Button_cnt[9]~37  $ (GND))) # (!\CLK_button|Button_cnt [10] & (!\CLK_button|Button_cnt[9]~37  & VCC))
+// \CLK_button|Button_cnt[10]~39  = CARRY((\CLK_button|Button_cnt [10] & !\CLK_button|Button_cnt[9]~37 ))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[9]~37 ),
+	.combout(\CLK_button|Button_cnt[10]~38_combout ),
+	.cout(\CLK_button|Button_cnt[10]~39 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[10]~38 .lut_mask = 16'hC30C;
+defparam \CLK_button|Button_cnt[10]~38 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N3
+dffeas \CLK_button|Button_cnt[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[10]~38_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[10] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N4
+cycloneive_lcell_comb \CLK_button|Button_cnt[11]~40 (
+// Equation(s):
+// \CLK_button|Button_cnt[11]~40_combout  = (\CLK_button|Button_cnt [11] & (!\CLK_button|Button_cnt[10]~39 )) # (!\CLK_button|Button_cnt [11] & ((\CLK_button|Button_cnt[10]~39 ) # (GND)))
+// \CLK_button|Button_cnt[11]~41  = CARRY((!\CLK_button|Button_cnt[10]~39 ) # (!\CLK_button|Button_cnt [11]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [11]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[10]~39 ),
+	.combout(\CLK_button|Button_cnt[11]~40_combout ),
+	.cout(\CLK_button|Button_cnt[11]~41 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[11]~40 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[11]~40 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N5
+dffeas \CLK_button|Button_cnt[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[11]~40_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[11] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N6
+cycloneive_lcell_comb \CLK_button|Button_cnt[12]~42 (
+// Equation(s):
+// \CLK_button|Button_cnt[12]~42_combout  = (\CLK_button|Button_cnt [12] & (\CLK_button|Button_cnt[11]~41  $ (GND))) # (!\CLK_button|Button_cnt [12] & (!\CLK_button|Button_cnt[11]~41  & VCC))
+// \CLK_button|Button_cnt[12]~43  = CARRY((\CLK_button|Button_cnt [12] & !\CLK_button|Button_cnt[11]~41 ))
+
+	.dataa(\CLK_button|Button_cnt [12]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[11]~41 ),
+	.combout(\CLK_button|Button_cnt[12]~42_combout ),
+	.cout(\CLK_button|Button_cnt[12]~43 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[12]~42 .lut_mask = 16'hA50A;
+defparam \CLK_button|Button_cnt[12]~42 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N7
+dffeas \CLK_button|Button_cnt[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[12]~42_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[12] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N8
+cycloneive_lcell_comb \CLK_button|Button_cnt[13]~44 (
+// Equation(s):
+// \CLK_button|Button_cnt[13]~44_combout  = (\CLK_button|Button_cnt [13] & (!\CLK_button|Button_cnt[12]~43 )) # (!\CLK_button|Button_cnt [13] & ((\CLK_button|Button_cnt[12]~43 ) # (GND)))
+// \CLK_button|Button_cnt[13]~45  = CARRY((!\CLK_button|Button_cnt[12]~43 ) # (!\CLK_button|Button_cnt [13]))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [13]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[12]~43 ),
+	.combout(\CLK_button|Button_cnt[13]~44_combout ),
+	.cout(\CLK_button|Button_cnt[13]~45 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[13]~44 .lut_mask = 16'h3C3F;
+defparam \CLK_button|Button_cnt[13]~44 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N9
+dffeas \CLK_button|Button_cnt[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[13]~44_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[13] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N10
+cycloneive_lcell_comb \CLK_button|Button_cnt[14]~46 (
+// Equation(s):
+// \CLK_button|Button_cnt[14]~46_combout  = (\CLK_button|Button_cnt [14] & (\CLK_button|Button_cnt[13]~45  $ (GND))) # (!\CLK_button|Button_cnt [14] & (!\CLK_button|Button_cnt[13]~45  & VCC))
+// \CLK_button|Button_cnt[14]~47  = CARRY((\CLK_button|Button_cnt [14] & !\CLK_button|Button_cnt[13]~45 ))
+
+	.dataa(\CLK_button|Button_cnt [14]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[13]~45 ),
+	.combout(\CLK_button|Button_cnt[14]~46_combout ),
+	.cout(\CLK_button|Button_cnt[14]~47 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[14]~46 .lut_mask = 16'hA50A;
+defparam \CLK_button|Button_cnt[14]~46 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N11
+dffeas \CLK_button|Button_cnt[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[14]~46_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[14] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N12
+cycloneive_lcell_comb \CLK_button|Button_cnt[15]~48 (
+// Equation(s):
+// \CLK_button|Button_cnt[15]~48_combout  = (\CLK_button|Button_cnt [15] & (!\CLK_button|Button_cnt[14]~47 )) # (!\CLK_button|Button_cnt [15] & ((\CLK_button|Button_cnt[14]~47 ) # (GND)))
+// \CLK_button|Button_cnt[15]~49  = CARRY((!\CLK_button|Button_cnt[14]~47 ) # (!\CLK_button|Button_cnt [15]))
+
+	.dataa(\CLK_button|Button_cnt [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[14]~47 ),
+	.combout(\CLK_button|Button_cnt[15]~48_combout ),
+	.cout(\CLK_button|Button_cnt[15]~49 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[15]~48 .lut_mask = 16'h5A5F;
+defparam \CLK_button|Button_cnt[15]~48 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N13
+dffeas \CLK_button|Button_cnt[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[15]~48_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[15] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N14
+cycloneive_lcell_comb \CLK_button|Button_cnt[16]~50 (
+// Equation(s):
+// \CLK_button|Button_cnt[16]~50_combout  = (\CLK_button|Button_cnt [16] & (\CLK_button|Button_cnt[15]~49  $ (GND))) # (!\CLK_button|Button_cnt [16] & (!\CLK_button|Button_cnt[15]~49  & VCC))
+// \CLK_button|Button_cnt[16]~51  = CARRY((\CLK_button|Button_cnt [16] & !\CLK_button|Button_cnt[15]~49 ))
+
+	.dataa(gnd),
+	.datab(\CLK_button|Button_cnt [16]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\CLK_button|Button_cnt[15]~49 ),
+	.combout(\CLK_button|Button_cnt[16]~50_combout ),
+	.cout(\CLK_button|Button_cnt[16]~51 ));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[16]~50 .lut_mask = 16'hC30C;
+defparam \CLK_button|Button_cnt[16]~50 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N15
+dffeas \CLK_button|Button_cnt[16] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[16]~50_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[16] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N16
+cycloneive_lcell_comb \CLK_button|Button_cnt[17]~52 (
+// Equation(s):
+// \CLK_button|Button_cnt[17]~52_combout  = \CLK_button|Button_cnt[16]~51  $ (\CLK_button|Button_cnt [17])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\CLK_button|Button_cnt [17]),
+	.cin(\CLK_button|Button_cnt[16]~51 ),
+	.combout(\CLK_button|Button_cnt[17]~52_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[17]~52 .lut_mask = 16'h0FF0;
+defparam \CLK_button|Button_cnt[17]~52 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X82_Y55_N17
+dffeas \CLK_button|Button_cnt[17] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_cnt[17]~52_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\CLK_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_cnt [17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_cnt[17] .is_wysiwyg = "true";
+defparam \CLK_button|Button_cnt[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N24
+cycloneive_lcell_comb \CLK_button|Button_state~5 (
+// Equation(s):
+// \CLK_button|Button_state~5_combout  = (\CLK_button|Button_cnt [15] & (\CLK_button|Button_cnt [16] & (\CLK_button|Button_cnt [13] & \CLK_button|Button_cnt [14])))
+
+	.dataa(\CLK_button|Button_cnt [15]),
+	.datab(\CLK_button|Button_cnt [16]),
+	.datac(\CLK_button|Button_cnt [13]),
+	.datad(\CLK_button|Button_cnt [14]),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~5 .lut_mask = 16'h8000;
+defparam \CLK_button|Button_state~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N12
+cycloneive_lcell_comb \CLK_button|Button_state~1 (
+// Equation(s):
+// \CLK_button|Button_state~1_combout  = (\CLK_button|Button_cnt [2] & (\CLK_button|Button_cnt [1] & (\CLK_button|Button_cnt [4] & \CLK_button|Button_cnt [3])))
+
+	.dataa(\CLK_button|Button_cnt [2]),
+	.datab(\CLK_button|Button_cnt [1]),
+	.datac(\CLK_button|Button_cnt [4]),
+	.datad(\CLK_button|Button_cnt [3]),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~1 .lut_mask = 16'h8000;
+defparam \CLK_button|Button_state~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N6
+cycloneive_lcell_comb \CLK_button|Button_state~0 (
+// Equation(s):
+// \CLK_button|Button_state~0_combout  = (\rst_n_inp~input_o  & (\CLK_button|Button_cnt [0] & (\CLK_button|Button_state~q  $ (\CLK_button|Button_sync_1~q ))))
+
+	.dataa(\rst_n_inp~input_o ),
+	.datab(\CLK_button|Button_cnt [0]),
+	.datac(\CLK_button|Button_state~q ),
+	.datad(\CLK_button|Button_sync_1~q ),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~0 .lut_mask = 16'h0880;
+defparam \CLK_button|Button_state~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N8
+cycloneive_lcell_comb \CLK_button|Button_state~2 (
+// Equation(s):
+// \CLK_button|Button_state~2_combout  = (\CLK_button|Button_cnt [6] & (\CLK_button|Button_cnt [5] & (\CLK_button|Button_cnt [8] & \CLK_button|Button_cnt [7])))
+
+	.dataa(\CLK_button|Button_cnt [6]),
+	.datab(\CLK_button|Button_cnt [5]),
+	.datac(\CLK_button|Button_cnt [8]),
+	.datad(\CLK_button|Button_cnt [7]),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~2 .lut_mask = 16'h8000;
+defparam \CLK_button|Button_state~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y55_N22
+cycloneive_lcell_comb \CLK_button|Button_state~3 (
+// Equation(s):
+// \CLK_button|Button_state~3_combout  = (\CLK_button|Button_cnt [12] & (\CLK_button|Button_cnt [10] & (\CLK_button|Button_cnt [11] & \CLK_button|Button_cnt [9])))
+
+	.dataa(\CLK_button|Button_cnt [12]),
+	.datab(\CLK_button|Button_cnt [10]),
+	.datac(\CLK_button|Button_cnt [11]),
+	.datad(\CLK_button|Button_cnt [9]),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~3 .lut_mask = 16'h8000;
+defparam \CLK_button|Button_state~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N2
+cycloneive_lcell_comb \CLK_button|Button_state~4 (
+// Equation(s):
+// \CLK_button|Button_state~4_combout  = (\CLK_button|Button_state~1_combout  & (\CLK_button|Button_state~0_combout  & (\CLK_button|Button_state~2_combout  & \CLK_button|Button_state~3_combout )))
+
+	.dataa(\CLK_button|Button_state~1_combout ),
+	.datab(\CLK_button|Button_state~0_combout ),
+	.datac(\CLK_button|Button_state~2_combout ),
+	.datad(\CLK_button|Button_state~3_combout ),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~4 .lut_mask = 16'h8000;
+defparam \CLK_button|Button_state~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N0
+cycloneive_lcell_comb \CLK_button|Button_state~6 (
+// Equation(s):
+// \CLK_button|Button_state~6_combout  = \CLK_button|Button_state~q  $ (((\CLK_button|Button_cnt [17] & (\CLK_button|Button_state~5_combout  & \CLK_button|Button_state~4_combout ))))
+
+	.dataa(\CLK_button|Button_cnt [17]),
+	.datab(\CLK_button|Button_state~5_combout ),
+	.datac(\CLK_button|Button_state~q ),
+	.datad(\CLK_button|Button_state~4_combout ),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~6 .lut_mask = 16'h78F0;
+defparam \CLK_button|Button_state~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y56_N4
+cycloneive_lcell_comb \CLK_button|Button_state~feeder (
+// Equation(s):
+// \CLK_button|Button_state~feeder_combout  = \CLK_button|Button_state~6_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\CLK_button|Button_state~6_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\CLK_button|Button_state~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CLK_button|Button_state~feeder .lut_mask = 16'hF0F0;
+defparam \CLK_button|Button_state~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X82_Y56_N5
+dffeas \CLK_button|Button_state (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\CLK_button|Button_state~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CLK_button|Button_state~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \CLK_button|Button_state .is_wysiwyg = "true";
+defparam \CLK_button|Button_state .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N14
+cycloneive_lcell_comb \K_button|Button_cnt[0]~18 (
+// Equation(s):
+// \K_button|Button_cnt[0]~18_combout  = \K_button|Button_cnt [0] $ (VCC)
+// \K_button|Button_cnt[0]~19  = CARRY(\K_button|Button_cnt [0])
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\K_button|Button_cnt[0]~18_combout ),
+	.cout(\K_button|Button_cnt[0]~19 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[0]~18 .lut_mask = 16'h33CC;
+defparam \K_button|Button_cnt[0]~18 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X83_Y73_N22
+cycloneive_io_ibuf \K~input (
+	.i(K),
+	.ibar(gnd),
+	.o(\K~input_o ));
+// synopsys translate_off
+defparam \K~input .bus_hold = "false";
+defparam \K~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X82_Y54_N24
+cycloneive_lcell_comb \K_button|Button_sync_0~0 (
+// Equation(s):
+// \K_button|Button_sync_0~0_combout  = !\K~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\K~input_o ),
+	.cin(gnd),
+	.combout(\K_button|Button_sync_0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_sync_0~0 .lut_mask = 16'h00FF;
+defparam \K_button|Button_sync_0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X82_Y54_N25
+dffeas \K_button|Button_sync_0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_sync_0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_sync_0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_sync_0 .is_wysiwyg = "true";
+defparam \K_button|Button_sync_0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N22
+cycloneive_lcell_comb \K_button|Button_sync_1~feeder (
+// Equation(s):
+// \K_button|Button_sync_1~feeder_combout  = \K_button|Button_sync_0~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\K_button|Button_sync_0~q ),
+	.cin(gnd),
+	.combout(\K_button|Button_sync_1~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_sync_1~feeder .lut_mask = 16'hFF00;
+defparam \K_button|Button_sync_1~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N23
+dffeas \K_button|Button_sync_1 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_sync_1~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_sync_1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_sync_1 .is_wysiwyg = "true";
+defparam \K_button|Button_sync_1 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N30
+cycloneive_lcell_comb \K_button|comb~0 (
+// Equation(s):
+// \K_button|comb~0_combout  = \K_button|Button_sync_1~q  $ (!\K_button|Button_state~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\K_button|Button_sync_1~q ),
+	.datad(\K_button|Button_state~q ),
+	.cin(gnd),
+	.combout(\K_button|comb~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|comb~0 .lut_mask = 16'hF00F;
+defparam \K_button|comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N15
+dffeas \K_button|Button_cnt[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[0]~18_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[0] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N16
+cycloneive_lcell_comb \K_button|Button_cnt[1]~20 (
+// Equation(s):
+// \K_button|Button_cnt[1]~20_combout  = (\K_button|Button_cnt [1] & (!\K_button|Button_cnt[0]~19 )) # (!\K_button|Button_cnt [1] & ((\K_button|Button_cnt[0]~19 ) # (GND)))
+// \K_button|Button_cnt[1]~21  = CARRY((!\K_button|Button_cnt[0]~19 ) # (!\K_button|Button_cnt [1]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[0]~19 ),
+	.combout(\K_button|Button_cnt[1]~20_combout ),
+	.cout(\K_button|Button_cnt[1]~21 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[1]~20 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[1]~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N17
+dffeas \K_button|Button_cnt[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[1]~20_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[1] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N18
+cycloneive_lcell_comb \K_button|Button_cnt[2]~22 (
+// Equation(s):
+// \K_button|Button_cnt[2]~22_combout  = (\K_button|Button_cnt [2] & (\K_button|Button_cnt[1]~21  $ (GND))) # (!\K_button|Button_cnt [2] & (!\K_button|Button_cnt[1]~21  & VCC))
+// \K_button|Button_cnt[2]~23  = CARRY((\K_button|Button_cnt [2] & !\K_button|Button_cnt[1]~21 ))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[1]~21 ),
+	.combout(\K_button|Button_cnt[2]~22_combout ),
+	.cout(\K_button|Button_cnt[2]~23 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[2]~22 .lut_mask = 16'hC30C;
+defparam \K_button|Button_cnt[2]~22 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N19
+dffeas \K_button|Button_cnt[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[2]~22_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[2] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N20
+cycloneive_lcell_comb \K_button|Button_cnt[3]~24 (
+// Equation(s):
+// \K_button|Button_cnt[3]~24_combout  = (\K_button|Button_cnt [3] & (!\K_button|Button_cnt[2]~23 )) # (!\K_button|Button_cnt [3] & ((\K_button|Button_cnt[2]~23 ) # (GND)))
+// \K_button|Button_cnt[3]~25  = CARRY((!\K_button|Button_cnt[2]~23 ) # (!\K_button|Button_cnt [3]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[2]~23 ),
+	.combout(\K_button|Button_cnt[3]~24_combout ),
+	.cout(\K_button|Button_cnt[3]~25 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[3]~24 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[3]~24 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N21
+dffeas \K_button|Button_cnt[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[3]~24_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[3] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N22
+cycloneive_lcell_comb \K_button|Button_cnt[4]~26 (
+// Equation(s):
+// \K_button|Button_cnt[4]~26_combout  = (\K_button|Button_cnt [4] & (\K_button|Button_cnt[3]~25  $ (GND))) # (!\K_button|Button_cnt [4] & (!\K_button|Button_cnt[3]~25  & VCC))
+// \K_button|Button_cnt[4]~27  = CARRY((\K_button|Button_cnt [4] & !\K_button|Button_cnt[3]~25 ))
+
+	.dataa(\K_button|Button_cnt [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[3]~25 ),
+	.combout(\K_button|Button_cnt[4]~26_combout ),
+	.cout(\K_button|Button_cnt[4]~27 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[4]~26 .lut_mask = 16'hA50A;
+defparam \K_button|Button_cnt[4]~26 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N23
+dffeas \K_button|Button_cnt[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[4]~26_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[4] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N24
+cycloneive_lcell_comb \K_button|Button_cnt[5]~28 (
+// Equation(s):
+// \K_button|Button_cnt[5]~28_combout  = (\K_button|Button_cnt [5] & (!\K_button|Button_cnt[4]~27 )) # (!\K_button|Button_cnt [5] & ((\K_button|Button_cnt[4]~27 ) # (GND)))
+// \K_button|Button_cnt[5]~29  = CARRY((!\K_button|Button_cnt[4]~27 ) # (!\K_button|Button_cnt [5]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[4]~27 ),
+	.combout(\K_button|Button_cnt[5]~28_combout ),
+	.cout(\K_button|Button_cnt[5]~29 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[5]~28 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[5]~28 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N25
+dffeas \K_button|Button_cnt[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[5]~28_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[5] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N26
+cycloneive_lcell_comb \K_button|Button_cnt[6]~30 (
+// Equation(s):
+// \K_button|Button_cnt[6]~30_combout  = (\K_button|Button_cnt [6] & (\K_button|Button_cnt[5]~29  $ (GND))) # (!\K_button|Button_cnt [6] & (!\K_button|Button_cnt[5]~29  & VCC))
+// \K_button|Button_cnt[6]~31  = CARRY((\K_button|Button_cnt [6] & !\K_button|Button_cnt[5]~29 ))
+
+	.dataa(\K_button|Button_cnt [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[5]~29 ),
+	.combout(\K_button|Button_cnt[6]~30_combout ),
+	.cout(\K_button|Button_cnt[6]~31 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[6]~30 .lut_mask = 16'hA50A;
+defparam \K_button|Button_cnt[6]~30 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N27
+dffeas \K_button|Button_cnt[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[6]~30_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[6] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N28
+cycloneive_lcell_comb \K_button|Button_cnt[7]~32 (
+// Equation(s):
+// \K_button|Button_cnt[7]~32_combout  = (\K_button|Button_cnt [7] & (!\K_button|Button_cnt[6]~31 )) # (!\K_button|Button_cnt [7] & ((\K_button|Button_cnt[6]~31 ) # (GND)))
+// \K_button|Button_cnt[7]~33  = CARRY((!\K_button|Button_cnt[6]~31 ) # (!\K_button|Button_cnt [7]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[6]~31 ),
+	.combout(\K_button|Button_cnt[7]~32_combout ),
+	.cout(\K_button|Button_cnt[7]~33 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[7]~32 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[7]~32 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N29
+dffeas \K_button|Button_cnt[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[7]~32_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[7] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N30
+cycloneive_lcell_comb \K_button|Button_cnt[8]~34 (
+// Equation(s):
+// \K_button|Button_cnt[8]~34_combout  = (\K_button|Button_cnt [8] & (\K_button|Button_cnt[7]~33  $ (GND))) # (!\K_button|Button_cnt [8] & (!\K_button|Button_cnt[7]~33  & VCC))
+// \K_button|Button_cnt[8]~35  = CARRY((\K_button|Button_cnt [8] & !\K_button|Button_cnt[7]~33 ))
+
+	.dataa(\K_button|Button_cnt [8]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[7]~33 ),
+	.combout(\K_button|Button_cnt[8]~34_combout ),
+	.cout(\K_button|Button_cnt[8]~35 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[8]~34 .lut_mask = 16'hA50A;
+defparam \K_button|Button_cnt[8]~34 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y55_N31
+dffeas \K_button|Button_cnt[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[8]~34_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[8] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N0
+cycloneive_lcell_comb \K_button|Button_cnt[9]~36 (
+// Equation(s):
+// \K_button|Button_cnt[9]~36_combout  = (\K_button|Button_cnt [9] & (!\K_button|Button_cnt[8]~35 )) # (!\K_button|Button_cnt [9] & ((\K_button|Button_cnt[8]~35 ) # (GND)))
+// \K_button|Button_cnt[9]~37  = CARRY((!\K_button|Button_cnt[8]~35 ) # (!\K_button|Button_cnt [9]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[8]~35 ),
+	.combout(\K_button|Button_cnt[9]~36_combout ),
+	.cout(\K_button|Button_cnt[9]~37 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[9]~36 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[9]~36 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N1
+dffeas \K_button|Button_cnt[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[9]~36_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[9] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N2
+cycloneive_lcell_comb \K_button|Button_cnt[10]~38 (
+// Equation(s):
+// \K_button|Button_cnt[10]~38_combout  = (\K_button|Button_cnt [10] & (\K_button|Button_cnt[9]~37  $ (GND))) # (!\K_button|Button_cnt [10] & (!\K_button|Button_cnt[9]~37  & VCC))
+// \K_button|Button_cnt[10]~39  = CARRY((\K_button|Button_cnt [10] & !\K_button|Button_cnt[9]~37 ))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[9]~37 ),
+	.combout(\K_button|Button_cnt[10]~38_combout ),
+	.cout(\K_button|Button_cnt[10]~39 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[10]~38 .lut_mask = 16'hC30C;
+defparam \K_button|Button_cnt[10]~38 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N3
+dffeas \K_button|Button_cnt[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[10]~38_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[10] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N4
+cycloneive_lcell_comb \K_button|Button_cnt[11]~40 (
+// Equation(s):
+// \K_button|Button_cnt[11]~40_combout  = (\K_button|Button_cnt [11] & (!\K_button|Button_cnt[10]~39 )) # (!\K_button|Button_cnt [11] & ((\K_button|Button_cnt[10]~39 ) # (GND)))
+// \K_button|Button_cnt[11]~41  = CARRY((!\K_button|Button_cnt[10]~39 ) # (!\K_button|Button_cnt [11]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [11]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[10]~39 ),
+	.combout(\K_button|Button_cnt[11]~40_combout ),
+	.cout(\K_button|Button_cnt[11]~41 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[11]~40 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[11]~40 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N5
+dffeas \K_button|Button_cnt[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[11]~40_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[11] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N6
+cycloneive_lcell_comb \K_button|Button_cnt[12]~42 (
+// Equation(s):
+// \K_button|Button_cnt[12]~42_combout  = (\K_button|Button_cnt [12] & (\K_button|Button_cnt[11]~41  $ (GND))) # (!\K_button|Button_cnt [12] & (!\K_button|Button_cnt[11]~41  & VCC))
+// \K_button|Button_cnt[12]~43  = CARRY((\K_button|Button_cnt [12] & !\K_button|Button_cnt[11]~41 ))
+
+	.dataa(\K_button|Button_cnt [12]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[11]~41 ),
+	.combout(\K_button|Button_cnt[12]~42_combout ),
+	.cout(\K_button|Button_cnt[12]~43 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[12]~42 .lut_mask = 16'hA50A;
+defparam \K_button|Button_cnt[12]~42 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N7
+dffeas \K_button|Button_cnt[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[12]~42_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[12] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N8
+cycloneive_lcell_comb \K_button|Button_cnt[13]~44 (
+// Equation(s):
+// \K_button|Button_cnt[13]~44_combout  = (\K_button|Button_cnt [13] & (!\K_button|Button_cnt[12]~43 )) # (!\K_button|Button_cnt [13] & ((\K_button|Button_cnt[12]~43 ) # (GND)))
+// \K_button|Button_cnt[13]~45  = CARRY((!\K_button|Button_cnt[12]~43 ) # (!\K_button|Button_cnt [13]))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [13]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[12]~43 ),
+	.combout(\K_button|Button_cnt[13]~44_combout ),
+	.cout(\K_button|Button_cnt[13]~45 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[13]~44 .lut_mask = 16'h3C3F;
+defparam \K_button|Button_cnt[13]~44 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N9
+dffeas \K_button|Button_cnt[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[13]~44_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[13] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N10
+cycloneive_lcell_comb \K_button|Button_cnt[14]~46 (
+// Equation(s):
+// \K_button|Button_cnt[14]~46_combout  = (\K_button|Button_cnt [14] & (\K_button|Button_cnt[13]~45  $ (GND))) # (!\K_button|Button_cnt [14] & (!\K_button|Button_cnt[13]~45  & VCC))
+// \K_button|Button_cnt[14]~47  = CARRY((\K_button|Button_cnt [14] & !\K_button|Button_cnt[13]~45 ))
+
+	.dataa(\K_button|Button_cnt [14]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[13]~45 ),
+	.combout(\K_button|Button_cnt[14]~46_combout ),
+	.cout(\K_button|Button_cnt[14]~47 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[14]~46 .lut_mask = 16'hA50A;
+defparam \K_button|Button_cnt[14]~46 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N11
+dffeas \K_button|Button_cnt[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[14]~46_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[14] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N12
+cycloneive_lcell_comb \K_button|Button_cnt[15]~48 (
+// Equation(s):
+// \K_button|Button_cnt[15]~48_combout  = (\K_button|Button_cnt [15] & (!\K_button|Button_cnt[14]~47 )) # (!\K_button|Button_cnt [15] & ((\K_button|Button_cnt[14]~47 ) # (GND)))
+// \K_button|Button_cnt[15]~49  = CARRY((!\K_button|Button_cnt[14]~47 ) # (!\K_button|Button_cnt [15]))
+
+	.dataa(\K_button|Button_cnt [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[14]~47 ),
+	.combout(\K_button|Button_cnt[15]~48_combout ),
+	.cout(\K_button|Button_cnt[15]~49 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[15]~48 .lut_mask = 16'h5A5F;
+defparam \K_button|Button_cnt[15]~48 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N13
+dffeas \K_button|Button_cnt[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[15]~48_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[15] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N14
+cycloneive_lcell_comb \K_button|Button_cnt[16]~50 (
+// Equation(s):
+// \K_button|Button_cnt[16]~50_combout  = (\K_button|Button_cnt [16] & (\K_button|Button_cnt[15]~49  $ (GND))) # (!\K_button|Button_cnt [16] & (!\K_button|Button_cnt[15]~49  & VCC))
+// \K_button|Button_cnt[16]~51  = CARRY((\K_button|Button_cnt [16] & !\K_button|Button_cnt[15]~49 ))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_cnt [16]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\K_button|Button_cnt[15]~49 ),
+	.combout(\K_button|Button_cnt[16]~50_combout ),
+	.cout(\K_button|Button_cnt[16]~51 ));
+// synopsys translate_off
+defparam \K_button|Button_cnt[16]~50 .lut_mask = 16'hC30C;
+defparam \K_button|Button_cnt[16]~50 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N15
+dffeas \K_button|Button_cnt[16] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[16]~50_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[16] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N28
+cycloneive_lcell_comb \K_button|Button_state~5 (
+// Equation(s):
+// \K_button|Button_state~5_combout  = (\K_button|Button_cnt [15] & (\K_button|Button_cnt [16] & (\K_button|Button_cnt [13] & \K_button|Button_cnt [14])))
+
+	.dataa(\K_button|Button_cnt [15]),
+	.datab(\K_button|Button_cnt [16]),
+	.datac(\K_button|Button_cnt [13]),
+	.datad(\K_button|Button_cnt [14]),
+	.cin(gnd),
+	.combout(\K_button|Button_state~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~5 .lut_mask = 16'h8000;
+defparam \K_button|Button_state~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N16
+cycloneive_lcell_comb \K_button|Button_cnt[17]~52 (
+// Equation(s):
+// \K_button|Button_cnt[17]~52_combout  = \K_button|Button_cnt[16]~51  $ (\K_button|Button_cnt [17])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\K_button|Button_cnt [17]),
+	.cin(\K_button|Button_cnt[16]~51 ),
+	.combout(\K_button|Button_cnt[17]~52_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_cnt[17]~52 .lut_mask = 16'h0FF0;
+defparam \K_button|Button_cnt[17]~52 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N17
+dffeas \K_button|Button_cnt[17] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_cnt[17]~52_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\K_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_cnt [17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_cnt[17] .is_wysiwyg = "true";
+defparam \K_button|Button_cnt[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N12
+cycloneive_lcell_comb \K_button|Button_state~1 (
+// Equation(s):
+// \K_button|Button_state~1_combout  = (\K_button|Button_cnt [4] & (\K_button|Button_cnt [2] & (\K_button|Button_cnt [1] & \K_button|Button_cnt [3])))
+
+	.dataa(\K_button|Button_cnt [4]),
+	.datab(\K_button|Button_cnt [2]),
+	.datac(\K_button|Button_cnt [1]),
+	.datad(\K_button|Button_cnt [3]),
+	.cin(gnd),
+	.combout(\K_button|Button_state~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~1 .lut_mask = 16'h8000;
+defparam \K_button|Button_state~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N20
+cycloneive_lcell_comb \K_button|Button_state~3 (
+// Equation(s):
+// \K_button|Button_state~3_combout  = (\K_button|Button_cnt [12] & (\K_button|Button_cnt [10] & (\K_button|Button_cnt [11] & \K_button|Button_cnt [9])))
+
+	.dataa(\K_button|Button_cnt [12]),
+	.datab(\K_button|Button_cnt [10]),
+	.datac(\K_button|Button_cnt [11]),
+	.datad(\K_button|Button_cnt [9]),
+	.cin(gnd),
+	.combout(\K_button|Button_state~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~3 .lut_mask = 16'h8000;
+defparam \K_button|Button_state~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y55_N2
+cycloneive_lcell_comb \K_button|Button_state~2 (
+// Equation(s):
+// \K_button|Button_state~2_combout  = (\K_button|Button_cnt [6] & (\K_button|Button_cnt [5] & (\K_button|Button_cnt [8] & \K_button|Button_cnt [7])))
+
+	.dataa(\K_button|Button_cnt [6]),
+	.datab(\K_button|Button_cnt [5]),
+	.datac(\K_button|Button_cnt [8]),
+	.datad(\K_button|Button_cnt [7]),
+	.cin(gnd),
+	.combout(\K_button|Button_state~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~2 .lut_mask = 16'h8000;
+defparam \K_button|Button_state~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N12
+cycloneive_lcell_comb \K_button|Button_state~0 (
+// Equation(s):
+// \K_button|Button_state~0_combout  = (\rst_n_inp~input_o  & (\K_button|Button_cnt [0] & (\K_button|Button_state~q  $ (\K_button|Button_sync_1~q ))))
+
+	.dataa(\rst_n_inp~input_o ),
+	.datab(\K_button|Button_state~q ),
+	.datac(\K_button|Button_sync_1~q ),
+	.datad(\K_button|Button_cnt [0]),
+	.cin(gnd),
+	.combout(\K_button|Button_state~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~0 .lut_mask = 16'h2800;
+defparam \K_button|Button_state~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N18
+cycloneive_lcell_comb \K_button|Button_state~4 (
+// Equation(s):
+// \K_button|Button_state~4_combout  = (\K_button|Button_state~1_combout  & (\K_button|Button_state~3_combout  & (\K_button|Button_state~2_combout  & \K_button|Button_state~0_combout )))
+
+	.dataa(\K_button|Button_state~1_combout ),
+	.datab(\K_button|Button_state~3_combout ),
+	.datac(\K_button|Button_state~2_combout ),
+	.datad(\K_button|Button_state~0_combout ),
+	.cin(gnd),
+	.combout(\K_button|Button_state~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~4 .lut_mask = 16'h8000;
+defparam \K_button|Button_state~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N24
+cycloneive_lcell_comb \K_button|Button_state~6 (
+// Equation(s):
+// \K_button|Button_state~6_combout  = \K_button|Button_state~q  $ (((\K_button|Button_state~5_combout  & (\K_button|Button_cnt [17] & \K_button|Button_state~4_combout ))))
+
+	.dataa(\K_button|Button_state~5_combout ),
+	.datab(\K_button|Button_cnt [17]),
+	.datac(\K_button|Button_state~q ),
+	.datad(\K_button|Button_state~4_combout ),
+	.cin(gnd),
+	.combout(\K_button|Button_state~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \K_button|Button_state~6 .lut_mask = 16'h78F0;
+defparam \K_button|Button_state~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N25
+dffeas \K_button|Button_state (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\K_button|Button_state~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\K_button|Button_state~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \K_button|Button_state .is_wysiwyg = "true";
+defparam \K_button|Button_state .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N14
+cycloneive_lcell_comb \J_button|Button_cnt[0]~18 (
+// Equation(s):
+// \J_button|Button_cnt[0]~18_combout  = \J_button|Button_cnt [0] $ (VCC)
+// \J_button|Button_cnt[0]~19  = CARRY(\J_button|Button_cnt [0])
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\J_button|Button_cnt[0]~18_combout ),
+	.cout(\J_button|Button_cnt[0]~19 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[0]~18 .lut_mask = 16'h33CC;
+defparam \J_button|Button_cnt[0]~18 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X79_Y73_N1
+cycloneive_io_ibuf \J~input (
+	.i(J),
+	.ibar(gnd),
+	.o(\J~input_o ));
+// synopsys translate_off
+defparam \J~input .bus_hold = "false";
+defparam \J~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X79_Y54_N14
+cycloneive_lcell_comb \J_button|Button_sync_0~0 (
+// Equation(s):
+// \J_button|Button_sync_0~0_combout  = !\J~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\J~input_o ),
+	.cin(gnd),
+	.combout(\J_button|Button_sync_0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_sync_0~0 .lut_mask = 16'h00FF;
+defparam \J_button|Button_sync_0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X79_Y54_N15
+dffeas \J_button|Button_sync_0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_sync_0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_sync_0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_sync_0 .is_wysiwyg = "true";
+defparam \J_button|Button_sync_0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N2
+cycloneive_lcell_comb \J_button|Button_sync_1~feeder (
+// Equation(s):
+// \J_button|Button_sync_1~feeder_combout  = \J_button|Button_sync_0~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\J_button|Button_sync_0~q ),
+	.cin(gnd),
+	.combout(\J_button|Button_sync_1~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_sync_1~feeder .lut_mask = 16'hFF00;
+defparam \J_button|Button_sync_1~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N3
+dffeas \J_button|Button_sync_1 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_sync_1~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_sync_1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_sync_1 .is_wysiwyg = "true";
+defparam \J_button|Button_sync_1 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N0
+cycloneive_lcell_comb \J_button|comb~0 (
+// Equation(s):
+// \J_button|comb~0_combout  = \J_button|Button_state~q  $ (!\J_button|Button_sync_1~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\J_button|Button_state~q ),
+	.datad(\J_button|Button_sync_1~q ),
+	.cin(gnd),
+	.combout(\J_button|comb~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|comb~0 .lut_mask = 16'hF00F;
+defparam \J_button|comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N15
+dffeas \J_button|Button_cnt[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[0]~18_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[0] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N16
+cycloneive_lcell_comb \J_button|Button_cnt[1]~20 (
+// Equation(s):
+// \J_button|Button_cnt[1]~20_combout  = (\J_button|Button_cnt [1] & (!\J_button|Button_cnt[0]~19 )) # (!\J_button|Button_cnt [1] & ((\J_button|Button_cnt[0]~19 ) # (GND)))
+// \J_button|Button_cnt[1]~21  = CARRY((!\J_button|Button_cnt[0]~19 ) # (!\J_button|Button_cnt [1]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[0]~19 ),
+	.combout(\J_button|Button_cnt[1]~20_combout ),
+	.cout(\J_button|Button_cnt[1]~21 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[1]~20 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[1]~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N17
+dffeas \J_button|Button_cnt[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[1]~20_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[1] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N18
+cycloneive_lcell_comb \J_button|Button_cnt[2]~22 (
+// Equation(s):
+// \J_button|Button_cnt[2]~22_combout  = (\J_button|Button_cnt [2] & (\J_button|Button_cnt[1]~21  $ (GND))) # (!\J_button|Button_cnt [2] & (!\J_button|Button_cnt[1]~21  & VCC))
+// \J_button|Button_cnt[2]~23  = CARRY((\J_button|Button_cnt [2] & !\J_button|Button_cnt[1]~21 ))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[1]~21 ),
+	.combout(\J_button|Button_cnt[2]~22_combout ),
+	.cout(\J_button|Button_cnt[2]~23 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[2]~22 .lut_mask = 16'hC30C;
+defparam \J_button|Button_cnt[2]~22 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N19
+dffeas \J_button|Button_cnt[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[2]~22_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[2] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N20
+cycloneive_lcell_comb \J_button|Button_cnt[3]~24 (
+// Equation(s):
+// \J_button|Button_cnt[3]~24_combout  = (\J_button|Button_cnt [3] & (!\J_button|Button_cnt[2]~23 )) # (!\J_button|Button_cnt [3] & ((\J_button|Button_cnt[2]~23 ) # (GND)))
+// \J_button|Button_cnt[3]~25  = CARRY((!\J_button|Button_cnt[2]~23 ) # (!\J_button|Button_cnt [3]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[2]~23 ),
+	.combout(\J_button|Button_cnt[3]~24_combout ),
+	.cout(\J_button|Button_cnt[3]~25 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[3]~24 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[3]~24 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N21
+dffeas \J_button|Button_cnt[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[3]~24_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[3] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N22
+cycloneive_lcell_comb \J_button|Button_cnt[4]~26 (
+// Equation(s):
+// \J_button|Button_cnt[4]~26_combout  = (\J_button|Button_cnt [4] & (\J_button|Button_cnt[3]~25  $ (GND))) # (!\J_button|Button_cnt [4] & (!\J_button|Button_cnt[3]~25  & VCC))
+// \J_button|Button_cnt[4]~27  = CARRY((\J_button|Button_cnt [4] & !\J_button|Button_cnt[3]~25 ))
+
+	.dataa(\J_button|Button_cnt [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[3]~25 ),
+	.combout(\J_button|Button_cnt[4]~26_combout ),
+	.cout(\J_button|Button_cnt[4]~27 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[4]~26 .lut_mask = 16'hA50A;
+defparam \J_button|Button_cnt[4]~26 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N23
+dffeas \J_button|Button_cnt[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[4]~26_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[4] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N24
+cycloneive_lcell_comb \J_button|Button_cnt[5]~28 (
+// Equation(s):
+// \J_button|Button_cnt[5]~28_combout  = (\J_button|Button_cnt [5] & (!\J_button|Button_cnt[4]~27 )) # (!\J_button|Button_cnt [5] & ((\J_button|Button_cnt[4]~27 ) # (GND)))
+// \J_button|Button_cnt[5]~29  = CARRY((!\J_button|Button_cnt[4]~27 ) # (!\J_button|Button_cnt [5]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[4]~27 ),
+	.combout(\J_button|Button_cnt[5]~28_combout ),
+	.cout(\J_button|Button_cnt[5]~29 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[5]~28 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[5]~28 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N25
+dffeas \J_button|Button_cnt[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[5]~28_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[5] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N26
+cycloneive_lcell_comb \J_button|Button_cnt[6]~30 (
+// Equation(s):
+// \J_button|Button_cnt[6]~30_combout  = (\J_button|Button_cnt [6] & (\J_button|Button_cnt[5]~29  $ (GND))) # (!\J_button|Button_cnt [6] & (!\J_button|Button_cnt[5]~29  & VCC))
+// \J_button|Button_cnt[6]~31  = CARRY((\J_button|Button_cnt [6] & !\J_button|Button_cnt[5]~29 ))
+
+	.dataa(\J_button|Button_cnt [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[5]~29 ),
+	.combout(\J_button|Button_cnt[6]~30_combout ),
+	.cout(\J_button|Button_cnt[6]~31 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[6]~30 .lut_mask = 16'hA50A;
+defparam \J_button|Button_cnt[6]~30 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N27
+dffeas \J_button|Button_cnt[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[6]~30_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[6] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N28
+cycloneive_lcell_comb \J_button|Button_cnt[7]~32 (
+// Equation(s):
+// \J_button|Button_cnt[7]~32_combout  = (\J_button|Button_cnt [7] & (!\J_button|Button_cnt[6]~31 )) # (!\J_button|Button_cnt [7] & ((\J_button|Button_cnt[6]~31 ) # (GND)))
+// \J_button|Button_cnt[7]~33  = CARRY((!\J_button|Button_cnt[6]~31 ) # (!\J_button|Button_cnt [7]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[6]~31 ),
+	.combout(\J_button|Button_cnt[7]~32_combout ),
+	.cout(\J_button|Button_cnt[7]~33 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[7]~32 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[7]~32 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N29
+dffeas \J_button|Button_cnt[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[7]~32_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[7] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N30
+cycloneive_lcell_comb \J_button|Button_cnt[8]~34 (
+// Equation(s):
+// \J_button|Button_cnt[8]~34_combout  = (\J_button|Button_cnt [8] & (\J_button|Button_cnt[7]~33  $ (GND))) # (!\J_button|Button_cnt [8] & (!\J_button|Button_cnt[7]~33  & VCC))
+// \J_button|Button_cnt[8]~35  = CARRY((\J_button|Button_cnt [8] & !\J_button|Button_cnt[7]~33 ))
+
+	.dataa(\J_button|Button_cnt [8]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[7]~33 ),
+	.combout(\J_button|Button_cnt[8]~34_combout ),
+	.cout(\J_button|Button_cnt[8]~35 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[8]~34 .lut_mask = 16'hA50A;
+defparam \J_button|Button_cnt[8]~34 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N31
+dffeas \J_button|Button_cnt[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[8]~34_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[8] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N0
+cycloneive_lcell_comb \J_button|Button_cnt[9]~36 (
+// Equation(s):
+// \J_button|Button_cnt[9]~36_combout  = (\J_button|Button_cnt [9] & (!\J_button|Button_cnt[8]~35 )) # (!\J_button|Button_cnt [9] & ((\J_button|Button_cnt[8]~35 ) # (GND)))
+// \J_button|Button_cnt[9]~37  = CARRY((!\J_button|Button_cnt[8]~35 ) # (!\J_button|Button_cnt [9]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[8]~35 ),
+	.combout(\J_button|Button_cnt[9]~36_combout ),
+	.cout(\J_button|Button_cnt[9]~37 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[9]~36 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[9]~36 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N1
+dffeas \J_button|Button_cnt[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[9]~36_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[9] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N2
+cycloneive_lcell_comb \J_button|Button_cnt[10]~38 (
+// Equation(s):
+// \J_button|Button_cnt[10]~38_combout  = (\J_button|Button_cnt [10] & (\J_button|Button_cnt[9]~37  $ (GND))) # (!\J_button|Button_cnt [10] & (!\J_button|Button_cnt[9]~37  & VCC))
+// \J_button|Button_cnt[10]~39  = CARRY((\J_button|Button_cnt [10] & !\J_button|Button_cnt[9]~37 ))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[9]~37 ),
+	.combout(\J_button|Button_cnt[10]~38_combout ),
+	.cout(\J_button|Button_cnt[10]~39 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[10]~38 .lut_mask = 16'hC30C;
+defparam \J_button|Button_cnt[10]~38 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N3
+dffeas \J_button|Button_cnt[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[10]~38_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[10] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N4
+cycloneive_lcell_comb \J_button|Button_cnt[11]~40 (
+// Equation(s):
+// \J_button|Button_cnt[11]~40_combout  = (\J_button|Button_cnt [11] & (!\J_button|Button_cnt[10]~39 )) # (!\J_button|Button_cnt [11] & ((\J_button|Button_cnt[10]~39 ) # (GND)))
+// \J_button|Button_cnt[11]~41  = CARRY((!\J_button|Button_cnt[10]~39 ) # (!\J_button|Button_cnt [11]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [11]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[10]~39 ),
+	.combout(\J_button|Button_cnt[11]~40_combout ),
+	.cout(\J_button|Button_cnt[11]~41 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[11]~40 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[11]~40 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N5
+dffeas \J_button|Button_cnt[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[11]~40_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[11] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N6
+cycloneive_lcell_comb \J_button|Button_cnt[12]~42 (
+// Equation(s):
+// \J_button|Button_cnt[12]~42_combout  = (\J_button|Button_cnt [12] & (\J_button|Button_cnt[11]~41  $ (GND))) # (!\J_button|Button_cnt [12] & (!\J_button|Button_cnt[11]~41  & VCC))
+// \J_button|Button_cnt[12]~43  = CARRY((\J_button|Button_cnt [12] & !\J_button|Button_cnt[11]~41 ))
+
+	.dataa(\J_button|Button_cnt [12]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[11]~41 ),
+	.combout(\J_button|Button_cnt[12]~42_combout ),
+	.cout(\J_button|Button_cnt[12]~43 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[12]~42 .lut_mask = 16'hA50A;
+defparam \J_button|Button_cnt[12]~42 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N7
+dffeas \J_button|Button_cnt[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[12]~42_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[12] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N8
+cycloneive_lcell_comb \J_button|Button_cnt[13]~44 (
+// Equation(s):
+// \J_button|Button_cnt[13]~44_combout  = (\J_button|Button_cnt [13] & (!\J_button|Button_cnt[12]~43 )) # (!\J_button|Button_cnt [13] & ((\J_button|Button_cnt[12]~43 ) # (GND)))
+// \J_button|Button_cnt[13]~45  = CARRY((!\J_button|Button_cnt[12]~43 ) # (!\J_button|Button_cnt [13]))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [13]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[12]~43 ),
+	.combout(\J_button|Button_cnt[13]~44_combout ),
+	.cout(\J_button|Button_cnt[13]~45 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[13]~44 .lut_mask = 16'h3C3F;
+defparam \J_button|Button_cnt[13]~44 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N9
+dffeas \J_button|Button_cnt[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[13]~44_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[13] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N10
+cycloneive_lcell_comb \J_button|Button_cnt[14]~46 (
+// Equation(s):
+// \J_button|Button_cnt[14]~46_combout  = (\J_button|Button_cnt [14] & (\J_button|Button_cnt[13]~45  $ (GND))) # (!\J_button|Button_cnt [14] & (!\J_button|Button_cnt[13]~45  & VCC))
+// \J_button|Button_cnt[14]~47  = CARRY((\J_button|Button_cnt [14] & !\J_button|Button_cnt[13]~45 ))
+
+	.dataa(\J_button|Button_cnt [14]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[13]~45 ),
+	.combout(\J_button|Button_cnt[14]~46_combout ),
+	.cout(\J_button|Button_cnt[14]~47 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[14]~46 .lut_mask = 16'hA50A;
+defparam \J_button|Button_cnt[14]~46 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N11
+dffeas \J_button|Button_cnt[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[14]~46_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[14] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N12
+cycloneive_lcell_comb \J_button|Button_cnt[15]~48 (
+// Equation(s):
+// \J_button|Button_cnt[15]~48_combout  = (\J_button|Button_cnt [15] & (!\J_button|Button_cnt[14]~47 )) # (!\J_button|Button_cnt [15] & ((\J_button|Button_cnt[14]~47 ) # (GND)))
+// \J_button|Button_cnt[15]~49  = CARRY((!\J_button|Button_cnt[14]~47 ) # (!\J_button|Button_cnt [15]))
+
+	.dataa(\J_button|Button_cnt [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[14]~47 ),
+	.combout(\J_button|Button_cnt[15]~48_combout ),
+	.cout(\J_button|Button_cnt[15]~49 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[15]~48 .lut_mask = 16'h5A5F;
+defparam \J_button|Button_cnt[15]~48 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N13
+dffeas \J_button|Button_cnt[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[15]~48_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[15] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N14
+cycloneive_lcell_comb \J_button|Button_cnt[16]~50 (
+// Equation(s):
+// \J_button|Button_cnt[16]~50_combout  = (\J_button|Button_cnt [16] & (\J_button|Button_cnt[15]~49  $ (GND))) # (!\J_button|Button_cnt [16] & (!\J_button|Button_cnt[15]~49  & VCC))
+// \J_button|Button_cnt[16]~51  = CARRY((\J_button|Button_cnt [16] & !\J_button|Button_cnt[15]~49 ))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_cnt [16]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\J_button|Button_cnt[15]~49 ),
+	.combout(\J_button|Button_cnt[16]~50_combout ),
+	.cout(\J_button|Button_cnt[16]~51 ));
+// synopsys translate_off
+defparam \J_button|Button_cnt[16]~50 .lut_mask = 16'hC30C;
+defparam \J_button|Button_cnt[16]~50 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N15
+dffeas \J_button|Button_cnt[16] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[16]~50_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[16] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N16
+cycloneive_lcell_comb \J_button|Button_cnt[17]~52 (
+// Equation(s):
+// \J_button|Button_cnt[17]~52_combout  = \J_button|Button_cnt[16]~51  $ (\J_button|Button_cnt [17])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\J_button|Button_cnt [17]),
+	.cin(\J_button|Button_cnt[16]~51 ),
+	.combout(\J_button|Button_cnt[17]~52_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_cnt[17]~52 .lut_mask = 16'h0FF0;
+defparam \J_button|Button_cnt[17]~52 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X80_Y53_N17
+dffeas \J_button|Button_cnt[17] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_cnt[17]~52_combout ),
+	.asdata(vcc),
+	.clrn(\rst_n_inp~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(\J_button|comb~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_cnt [17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_cnt[17] .is_wysiwyg = "true";
+defparam \J_button|Button_cnt[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N24
+cycloneive_lcell_comb \J_button|Button_state~5 (
+// Equation(s):
+// \J_button|Button_state~5_combout  = (\J_button|Button_cnt [15] & (\J_button|Button_cnt [16] & (\J_button|Button_cnt [13] & \J_button|Button_cnt [14])))
+
+	.dataa(\J_button|Button_cnt [15]),
+	.datab(\J_button|Button_cnt [16]),
+	.datac(\J_button|Button_cnt [13]),
+	.datad(\J_button|Button_cnt [14]),
+	.cin(gnd),
+	.combout(\J_button|Button_state~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~5 .lut_mask = 16'h8000;
+defparam \J_button|Button_state~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X79_Y54_N24
+cycloneive_lcell_comb \J_button|Button_state~2 (
+// Equation(s):
+// \J_button|Button_state~2_combout  = (\J_button|Button_cnt [8] & (\J_button|Button_cnt [6] & (\J_button|Button_cnt [5] & \J_button|Button_cnt [7])))
+
+	.dataa(\J_button|Button_cnt [8]),
+	.datab(\J_button|Button_cnt [6]),
+	.datac(\J_button|Button_cnt [5]),
+	.datad(\J_button|Button_cnt [7]),
+	.cin(gnd),
+	.combout(\J_button|Button_state~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~2 .lut_mask = 16'h8000;
+defparam \J_button|Button_state~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N6
+cycloneive_lcell_comb \J_button|Button_state~0 (
+// Equation(s):
+// \J_button|Button_state~0_combout  = (\J_button|Button_cnt [4] & (\J_button|Button_cnt [3] & (\J_button|Button_cnt [2] & \J_button|Button_cnt [1])))
+
+	.dataa(\J_button|Button_cnt [4]),
+	.datab(\J_button|Button_cnt [3]),
+	.datac(\J_button|Button_cnt [2]),
+	.datad(\J_button|Button_cnt [1]),
+	.cin(gnd),
+	.combout(\J_button|Button_state~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~0 .lut_mask = 16'h8000;
+defparam \J_button|Button_state~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N4
+cycloneive_lcell_comb \J_button|Button_state~1 (
+// Equation(s):
+// \J_button|Button_state~1_combout  = (\J_button|Button_cnt [0] & (!\J_button|comb~0_combout  & (\rst_n_inp~input_o  & \J_button|Button_state~0_combout )))
+
+	.dataa(\J_button|Button_cnt [0]),
+	.datab(\J_button|comb~0_combout ),
+	.datac(\rst_n_inp~input_o ),
+	.datad(\J_button|Button_state~0_combout ),
+	.cin(gnd),
+	.combout(\J_button|Button_state~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~1 .lut_mask = 16'h2000;
+defparam \J_button|Button_state~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y53_N26
+cycloneive_lcell_comb \J_button|Button_state~3 (
+// Equation(s):
+// \J_button|Button_state~3_combout  = (\J_button|Button_cnt [12] & (\J_button|Button_cnt [9] & (\J_button|Button_cnt [11] & \J_button|Button_cnt [10])))
+
+	.dataa(\J_button|Button_cnt [12]),
+	.datab(\J_button|Button_cnt [9]),
+	.datac(\J_button|Button_cnt [11]),
+	.datad(\J_button|Button_cnt [10]),
+	.cin(gnd),
+	.combout(\J_button|Button_state~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~3 .lut_mask = 16'h8000;
+defparam \J_button|Button_state~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N10
+cycloneive_lcell_comb \J_button|Button_state~4 (
+// Equation(s):
+// \J_button|Button_state~4_combout  = (\J_button|Button_state~2_combout  & (\J_button|Button_state~1_combout  & \J_button|Button_state~3_combout ))
+
+	.dataa(gnd),
+	.datab(\J_button|Button_state~2_combout ),
+	.datac(\J_button|Button_state~1_combout ),
+	.datad(\J_button|Button_state~3_combout ),
+	.cin(gnd),
+	.combout(\J_button|Button_state~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~4 .lut_mask = 16'hC000;
+defparam \J_button|Button_state~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X80_Y54_N8
+cycloneive_lcell_comb \J_button|Button_state~6 (
+// Equation(s):
+// \J_button|Button_state~6_combout  = \J_button|Button_state~q  $ (((\J_button|Button_cnt [17] & (\J_button|Button_state~5_combout  & \J_button|Button_state~4_combout ))))
+
+	.dataa(\J_button|Button_cnt [17]),
+	.datab(\J_button|Button_state~5_combout ),
+	.datac(\J_button|Button_state~q ),
+	.datad(\J_button|Button_state~4_combout ),
+	.cin(gnd),
+	.combout(\J_button|Button_state~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \J_button|Button_state~6 .lut_mask = 16'h78F0;
+defparam \J_button|Button_state~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X80_Y54_N9
+dffeas \J_button|Button_state (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\J_button|Button_state~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\J_button|Button_state~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \J_button|Button_state .is_wysiwyg = "true";
+defparam \J_button|Button_state .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X81_Y54_N26
+cycloneive_lcell_comb \q~0 (
+// Equation(s):
+// \q~0_combout  = (\q~reg0_q  & (!\K_button|Button_state~q )) # (!\q~reg0_q  & ((\J_button|Button_state~q )))
+
+	.dataa(gnd),
+	.datab(\K_button|Button_state~q ),
+	.datac(\q~reg0_q ),
+	.datad(\J_button|Button_state~q ),
+	.cin(gnd),
+	.combout(\q~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \q~0 .lut_mask = 16'h3F30;
+defparam \q~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X81_Y54_N27
+dffeas \q~reg0 (
+	.clk(\CLK_button|Button_state~q ),
+	.d(\q~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\q~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \q~reg0 .is_wysiwyg = "true";
+defparam \q~reg0 .power_up = "low";
+// synopsys translate_on
+
+assign q = \q~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_E2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_K2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_K1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_K22,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

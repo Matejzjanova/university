@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/s_r_ff.v
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/Waveform.vwf
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/ff1.bdf
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/Waveform2.vwf
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/Waveform1.vwf
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/d_l_ff.v
+source_file = 1, /home/misha/VUZ/5sem/dscheme/l3/db/lab3.cbx.xml
+design_name = ff1
+instance = comp, \q~output , q~output, ff1, 1
+instance = comp, \not_q~output , not_q~output, ff1, 1
+instance = comp, \R~input , R~input, ff1, 1
+instance = comp, \not_S~input , not_S~input, ff1, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1

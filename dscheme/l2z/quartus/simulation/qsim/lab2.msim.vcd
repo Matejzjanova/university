@@ -1,0 +1,199 @@
+$comment
+	File created using the following command:
+		vcd file lab2.msim.vcd -direction
+$end
+$date
+	Tue Dec  2 09:17:39 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module lab2_vlg_vec_tst $end
+$var reg 1 ! x1 $end
+$var reg 1 " x2 $end
+$var reg 1 # x3 $end
+$var reg 1 $ x4 $end
+$var wire 1 % y $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , x3~input_o $end
+$var wire 1 - y~output_o $end
+$var wire 1 . x4~input_o $end
+$var wire 1 / x2~input_o $end
+$var wire 1 0 x1~input_o $end
+$var wire 1 1 inst~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+x%
+0&
+1'
+x(
+1)
+1*
+1+
+0,
+x-
+0.
+0/
+00
+x1
+$end
+#6018
+01
+#12584
+1-
+1%
+#15000
+1$
+#16135
+1.
+#21635
+11
+#28237
+0-
+0%
+#30000
+1#
+0$
+1,
+#30979
+0.
+#36968
+01
+#43534
+1-
+1%
+#45000
+1$
+#46135
+1.
+#51635
+11
+#58237
+0-
+0%
+#60000
+1"
+0#
+0$
+0,
+#60979
+0.
+#61105
+1/
+#75000
+1$
+#76135
+1.
+#81672
+01
+#88238
+1-
+1%
+#90000
+1#
+0$
+1,
+#90979
+0.
+#96931
+11
+#103533
+0-
+0%
+#105000
+1$
+#106135
+1.
+#111672
+01
+#118238
+1-
+1%
+#120000
+1!
+0"
+0#
+0$
+0,
+#120949
+0/
+#120979
+0.
+#121115
+10
+#135000
+1$
+#136135
+1.
+#150000
+1#
+0$
+1,
+#150979
+0.
+#165000
+1$
+#166135
+1.
+#180000
+1"
+0#
+0$
+0,
+#180979
+0.
+#181105
+1/
+#186931
+11
+#193533
+0-
+0%
+#195000
+1$
+#196135
+1.
+#201672
+01
+#208238
+1-
+1%
+#210000
+1#
+0$
+1,
+#210979
+0.
+#216931
+11
+#223533
+0-
+0%
+#225000
+1$
+#226135
+1.
+#231672
+01
+#238238
+1-
+1%
+#240000
