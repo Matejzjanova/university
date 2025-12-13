@@ -1,0 +1,152 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+\usepackage{subcaption}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №5\\
+            по дисциплине <<Радиотехнические цепи и сигналы>>\\
+            Тема: <<Исследование прохождения амплитудно-модулированных сигналов через избирательные цепи>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Пышкин С. И. } \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}} % 1.1, 1.2, 2.1, 2.2...
+\section{{Описание лабораторной установки}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{lm.png}
+    \caption{Схема лабораторного макета}
+    \label{fig:1}
+\end{figure}
+
+Лабораторный макет (рис. \ref{fig:1}) содержит 2 идентичных колебательных
+контура и переключатель, с помощью которого 2 контура соединяются меж-
+ду собой через переменный конденсатор. Сигнал от внешнего источника по-
+ступает на вход первого контура. Выходной сигнал регистрируется либо на
+выходе первого контура, либо на выходе второго контура в зависимости от
+положения переключателя.
+\section{Исследование АЧХ одиночного колебательного контура}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{apc.jpg}
+    \caption{АЧХ одиночного колебательного контура}
+    \label{fig:4}
+\end{figure}
+\section{Исследование АЧХ системы связанных контуров}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{apc2.jpg}
+    \caption{АЧХ системы связанных контуров (минимальная связь)}
+    \label{fig:3}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{apc3.jpg}
+    \caption{АЧХ системы связанных контуров (максимальная связь)}
+    \label{fig:2}
+\end{figure}
+\section{Исследование прохождения АМК с тональной модуляцией через
+колебательный контур}
+Найдем коэффициент модуляции m в спектралной области, посчитав отношение боковых гармоник к центральной (предварительно переведя
+из dBm в Вольты).
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\linewidth]{example1.jpg}
+        \caption{Значение боковой гармоники на частоте 4 кГц}
+        \label{fig:5}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\linewidth]{example2.png}
+        \caption{Значение центрально гармоники на частоте 4 кГц}
+        \label{fig:5}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{m1.jpg}
+    \caption{Зависимость коэффициента модуляции от частоты модулирующего колебания}
+    \label{fig:6}
+\end{figure}
+\section{Исследование прохождения АМК с тональной модуляцией через систему связанных контуров}
+Аналогично посчитает зависимость m от частоты модулирующего колебания для системы связанных контуров:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{m2.jpg}
+    \caption{Зависимость коэффициента модуляции от частоты модулирующего колебания}
+    \label{fig:7}
+\end{figure}
+\section{Исследование искажений АМК с тональной модуляцией при про-
+хождении через систему связанных контуров}
+Зафиксированные осцилограммы сигнала с перемодуляцией:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{b2.png}
+    \caption{Осциллограмма АМК с перемодуляцией при f = 410 кГЦ}
+    \label{fig:8}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{bieniya.png}
+    \caption{Осциллограмма АМК с перемодуляцией при f = 550 кГЦ}
+    \label{fig:8}
+\end{figure}
+\section{Вывод}
+В ходе лабораторной работы были исследованы характеристики одиночного колебательного контура и системы из двух связанных rолебательных контуров,
+изучены преобразования амплитудно-модулированных колебаний при прохождении через частотно-избирательные цепи. Были построены графики коэффициента модуляции для случая 
+одиночного контура (рис. \ref{fig:6}) и для случая системы связанных контуров с максимальной емкостью связи (рис. \ref{fig:7}) 
+\end{document}

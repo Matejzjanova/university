@@ -1,0 +1,84 @@
+$comment
+	File created using the following command:
+		vcd file l32.msim.vcd -direction
+$end
+$date
+	Mon Nov 17 06:55:11 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module d_l_ff_vlg_vec_tst $end
+$var reg 1 ! data $end
+$var reg 1 " load $end
+$var wire 1 # q $end
+
+$scope module i1 $end
+$var wire 1 $ gnd $end
+$var wire 1 % vcc $end
+$var wire 1 & unknown $end
+$var tri1 1 ' devclrn $end
+$var tri1 1 ( devpor $end
+$var tri1 1 ) devoe $end
+$var wire 1 * data~input_o $end
+$var wire 1 + load~input_o $end
+$var wire 1 , q~output_o $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+1%
+x&
+1'
+1(
+1)
+0*
+0+
+0,
+$end
+#20000
+1!
+1*
+#30000
+1"
+1+
+#50000
+0"
+0+
+#60000
+0!
+0*
+#120000
+1"
+1+
+#140000
+1!
+1*
+#160000
+0"
+0+
+#180000
+0!
+0*
+#210000
+1!
+1*
+#230000
+1"
+1+
+#250000
+0!
+0*
+#270000
+0"
+0+
+#300000

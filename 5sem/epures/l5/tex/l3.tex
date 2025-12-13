@@ -1,0 +1,310 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{subcaption}
+\usepackage{caption}
+
+\captionsetup[figure]{name=Рисунок}
+\usepackage{multicol}
+\captionsetup[subfigure]{labelformat=simple}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+
+\usepackage{caption}
+\usepackage[labelsep=endash, name=Рисунок]{subcaption}
+\usepackage[labelsep=endash]{caption}
+
+\captionsetup[figure]{name=Рисунок}
+\captionsetup[subfigure]{labelformat=simple}
+\setmainfont{Times New Roman}
+
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №4\\
+            по дисциплине <<Электропреобразовательные устройства>>\\
+            Тема: <<Импульсные стабилизаторы>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студенты гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А. \\ Тимошко С. И. \\ Федулова Е. В.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Матвеев А. В. \\ Самсонова Т. Е.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}} % 1.1, 1.2, 2.1, 2.2...
+\captionsetup[subfigure]{labelformat=simple}
+\setcounter{page}{2}
+\section{Исследование преоборазователя постоянного напряжения понижающего типа}
+\subsection{Осциллограммы напряжений и токов на разных элементах схемы при частоте 10 кГц}
+\begin{multicols}{2}
+  \centering
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{./ug.png}
+    \caption{Напряжение на генераторе}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./uce10.png}
+    \caption{Напряжение между коллектором и эмиттером регулировочного тразистора}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./ul10.png}
+    \caption{Напряжение на дросселе}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./ic10.png}
+    \caption{Коллекторный ток}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./ud10.png}
+    \caption{Напряжение на диоде}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./il110.png}
+    \caption{Дроссельный ток}
+  \end{figure}
+\end{multicols}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./un10.png}
+    \caption{Напряжение на нагрузке}
+\end{figure}
+
+\subsection{Осциллограммы дроссельного и коллекторного токов}
+\begin{multicols}{2}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./1il.png}
+    \caption{Дроссельный ток, частота 1 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./2il.png}
+    \caption{Дроссельный ток, частота 2 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./1ic.png}
+    \caption{Коллекторный ток, частота 1 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./2ic.png}
+    \caption{Коллекторный ток, частота 2 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./5il.png}
+    \caption{Дроссельный ток, частота 5 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./10il.png}
+    \caption{Дроссельный ток, частота 10 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./5ic.png}
+    \caption{Коллекторный ток, частота 5 кГц}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./10ic.png}
+    \caption{Коллекторный ток, частота 10 кГц}
+  \end{figure}
+\end{multicols}
+
+На рисунках 4, 6, 10 и других видны выбросы коллекторного тока,
+которые можно объяснить наличием паразитной емкости в транзисторе,
+которая разряжается при его октрытии (рисунок 4 и остальные), что может привести к пробою, а скачки дроссельного тока 
+происходят при резком напряжений на транзисторе и диоде.
+\subsection{Построим регулировочные и нагрузочные характеристики для понижающего 
+стабилизатора}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./llIk.jpg}
+    \caption{Нагрузочная характеристика коллекторного тока}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./llIn.jpg}
+    \caption{Нагрузочная характеристика тока нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./llg.jpg}
+    \caption{Нагрузочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjlik.jpg}
+    \caption{Регулировочная характеристика коллекторного тока}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjlun.jpg}
+    \caption{Регулировочная характеристика напряжения нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjlg.jpg}
+    \caption{Регулировочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+\section{Исследование преобразователя постоянного напряжения инвертирующего типа}
+\subsection{Осциллограммы напряжений и токов на различных элементах схемы при частоте 10 кГц}
+\begin{multicols}{2}
+  \centering
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{./ug.png}
+    \caption{Напряжение на генераторе}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./2uce.png}
+    \caption{Напряжение между коллектором и эмиттером регулировочного тразистора}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./2ul.png}
+    \caption{Напряжение на дросселе}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./22ic.png}
+    \caption{Коллекторный ток}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./2uvd.png}
+    \caption{Напряжение на диоде}
+  \end{figure}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth]{./22il.png}
+    \caption{Дроссельный ток}
+  \end{figure}
+  \end{multicols}
+\subsection{Построим регулировочные и нагрузочные характеристики для инвертирующего преобразователя
+}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./liIk.jpg}
+    \caption{Нагрузочная характеристика коллекторного тока}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./liIn.jpg}
+    \caption{Нагрузочная характеристика тока нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./lig.jpg}
+    \caption{Нагрузочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjiik.jpg}
+    \caption{Регулировочная характеристика коллекторного тока}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjiun.jpg}
+    \caption{Регулировочная характеристика напряжения нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./adjig.jpg}
+    \caption{Регулировочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+\section{Исследование импульсного стабилизатора постоянного напряжения
+понижающего типа в режиме ШИМ}
+Построим нагрузочные характеристики импульсного стабилизатора в режиме ШИМ
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./lpwmin.jpg}
+    \caption{Нагрузочная характеристика тока нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./lpwmg.jpg}
+    \caption{Нагрузочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+Построим зависимости напряжения нагрузки, времени импульса коллекторого тока и его относительной длительности для импульсного стабилизатора в режиме ШИМ
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./inpwmun.jpg}
+    \caption{Зависимость напряжения на нагрузке от входного напряжения}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./inpwmt.jpg}
+    \caption{Зависимость периода импульса коллекторого тока от входного напряжения}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./inpwmg.jpg}
+    \caption{Зависимость cкважности импульса коллекторого тока от входного напряжения}
+  \end{figure}
+\section{Исследование импульсного стабилизатора постоянного напряжения понижающего типа в релейном режиме}
+Построим нагрузочные характеристики импульсного стабилизатора в режиме ШИМ
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./relin.jpg}
+    \caption{Нагрузочная характеристика тока нагрузки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./relg.jpg}
+    \caption{Нагрузочная характеристика длительности импульсов коллекторного тока транзистора}
+  \end{figure}
+Построим зависимости напряжения нагрузки, времени импульса коллекторого тока и его относительной длительности для импульсного стабилизатора в релейном режиме 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./inrelun.jpg}
+    \caption{Зависимость напряжения на нагрузке от входного напряжения}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./inrelt.jpg}
+    \caption{Зависимость периода импульса коллекторого тока от входного напряжения}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{./inrelg.jpg}
+    \caption{Зависимость cкважности импульса коллекторого тока от входного напряжения}
+  \end{figure}
+\section{Вывод}
+Входе работы были исследованы различные импульсные стабилизаторы и преоборазователи напряжений:
+понижающий стабилизатор, инвертирующий преоборазователь, преоборазователь в режимах ШИМ и релейном, построены их нагрузочные и 
+регулировочные характеристики
+\end{document}

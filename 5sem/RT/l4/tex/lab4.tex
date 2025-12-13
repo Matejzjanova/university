@@ -1,0 +1,250 @@
+% \documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+% \DeclareMathSizes{14}{14}{14}{14}
+% \usepackage{extsizes}
+% \usepackage{graphicx}
+% \graphicspath{{../}}
+% \usepackage[russian]{babel} % задаёт русский как основной язык текста
+% \usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+% \usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+% \usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+% \setcounter{secnumdepth}{0}
+% \usepackage{mathptmx} 
+% \usepackage{fontspec}
+% \usepackage{subcaption}
+%
+% \setmainfont{Times New Roman}
+%
+%
+% \usepackage{geometry} % задаёт поля 
+% \geometry{left=3cm} % левое — 3 см
+% \geometry{right= 1.5cm} % правое — 1,5 см
+% \geometry{top=2cm} % верхнее — 2 см
+% \geometry{bottom=2cm} % нижнее — 2 см
+% \usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+% \usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+% \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+% \usepackage{float}
+% \usepackage{array}
+% \usepackage{tabularx}
+% \usepackage{titlesec}
+% \usepackage{zref}
+% \titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+% \titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+% \titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+% \setlength\parindent{1.25cm}
+% \setcounter{secnumdepth}{3}
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №4\\
+            по дисциплине <<Радиотехнические цепи и сигналы>>\\
+            Тема: <<Исследование прохождения амплитудно-модулированных сигналов через избирательные цепи>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Пышкин С. И. } \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+  \section{Определение масштаба графиков}
+  Определим масштаб по вертикали, исходя из рисунков \ref{fig:1}, \ref{fig:2}, \ref{fig:3}:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t1pd.jpg}
+    \caption{Плотность распределения начальной фазы треугольного сигнала}
+    \label{fig:1}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t1.jpg}
+    \caption{Осциллограмма треугольного сигнала}
+    \label{fig:2}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t1df.jpg}
+    \caption{Функция распределения треугольного сигнала}
+    \label{fig:3}
+  \end{figure}
+
+Размах сигнала = $\Delta U = 0.32  \text{ B}$
+
+Масштаб по горизонтали:
+\begin{equation}
+  (U_2 - U_1) L= 0.32 \text{ В}
+\end{equation}
+
+Изображение графика плотности вероятности по вертикали
+занимает $\Delta L = 0.8$ клеток.
+Масштаб по вертикали:
+\begin{equation}
+  \frac{1}{(U_2 - U_1)\Delta L} = 3.9 \text{\space} \frac{\text{1}}{\text{В}\cdot\text{дел}}
+\end{equation}
+\section{Исследование треугольного сигнала}
+Треугольный сигнал при $U_m = 0.8$ B:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t2pd.jpg}
+    \caption{Плотность распределения начальной фазы треугольного сигнала}
+    \label{fig:11}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t2.jpg}
+    \caption{Осциллограмма треугольного сигнала}
+    \label{fig:12}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{t2df.jpg}
+    \caption{Функция распределения треугольного сигнала}
+    \label{fig:13}
+  \end{figure}
+Видно, что ростом амплитуды функция распределения и плотность вероятности пропорционально "растягиваются", что соответвует большему диапазону значений,
+которые может принимать начальная фаза.
+\section{Исследование гармонического сигнала со случайной начальной фазой}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sinpd.jpg}
+    \caption{Плотность распределения напряжения синусоидального сигнала со случайной НФ}
+    \label{fig:21}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sin2pd.jpg}
+    \caption{Плотность распределения напряжения синусоидального сигнала со случайной НФ}
+    \label{fig:22}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sin2df.jpg}
+    \caption{Функция распределения синусоидального сигнала}
+    \label{fig:23}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sin2df.jpg}
+    \caption{Функция распределения синусоидального сигнала}
+    \label{fig:24}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sin2.jpg}
+    \caption{Функция распределения синусоидального сигнала}
+    \label{fig:25}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{sin2.jpg}
+    \caption{Функция распределения синусоидального сигнала}
+    \label{fig:26}
+  \end{subfigure}
+\end{figure}
+\section{Исследование шума с распределенем Гаусса}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{noise1pd.jpg}
+    \caption{Плотность распределения AWGN}
+    \label{fig:31}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{noise2pd.jpg}
+    \caption{Плотность распределения AWGN}
+    \label{fig:32}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{noise1df.jpg}
+    \caption{Функция распределения AWGN}
+    \label{fig:33}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{noise2df.jpg}
+    \caption{Функция распределения AWGN}
+    \label{fig:34}
+  \end{subfigure}
+\end{figure}
+\section{Исследование шума с распределенем Рэлея}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{nr1pd.jpg}
+    \caption{Плотность распределения AWGN}
+    \label{fig:41}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{nr2pd.jpg}
+    \caption{Плотность распределения AWGN}
+    \label{fig:42}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{nr1df.jpg}
+    \caption{Функция распределения AWGN}
+    \label{fig:43}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{nr2df.jpg}
+    \caption{Функция распределения AWGN}
+    \label{fig:44}
+  \end{subfigure}
+\end{figure}
+\section{Исследование сходимости к гауссовскому случайному процессу суммы независимых СП}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{clt1.jpg}
+    \caption{1 треугольный сигнал}
+   \label{fig:51}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{cltt1.jpg}
+    \caption{1 гармонический сигнал}
+    \label{fig:52}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{clt2.jpg}
+    \caption{2 треугольных сигнала}
+    \label{fig:53}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{cltt2.jpg}
+    \caption{2 гармонических сигнала}
+    \label{eig:54}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{clt3.jpg}
+    \caption{3 треугольных сигнала}
+    \label{fig:55}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{cltt3.jpg}
+    \caption{3 гармонических сигнала}
+    \label{fig:56}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{clt4.jpg}
+    \caption{4 треугольных сигнала}
+  \end{subfigure}
+  \begin{subfigure}{0.4\linewidth}
+    \includegraphics[width=\textwidth]{cltt4.jpg}
+    \caption{4 гармонических сигнала}
+  \end{subfigure}
+\end{figure}
+\section*{Вывод}
+В данной работе были проанализированы функции распределения и плотности вероятностей различных сигналов с разными диапазонами. Так, случайный треугольный сигнал демонстрирует равномерное распределение вероятности, тогда как гауссовский шум характеризуется нормальным (гауссовским) распределением. Также были рассмотрены гармонические сигналы и рэлеевский шум. Интересно отметить, что сумма треугольных сигналов быстрее сходится к гауссовскому распределению, что проявляется уже при объединении трёх треугольных сигналов. Это связано с тем, что плотность вероятности треугольных сигналов напоминает равномерное распределение, и при их сложении результат приближается к нормальному распределению. Наиболее быстрая сходимость наблюдается у рэлеевского шума с максимальной амплитудой.
+\end{document}
+
+

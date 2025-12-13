@@ -1,0 +1,424 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+\usepackage{subcaption}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №3\\
+            по дисциплине <<Электропреобразовательные устройства>>\\
+            Тема: <<Построение схемы, заданной логическим выражением>>\\
+            Вариант 8
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Матвеев А. В. \\ Самсонова Т. Е.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}} % 1.1, 1.2, 2.1, 2.2...
+\captionsetup[subfigure]{labelformat=simple}
+\setcounter{page}{2}
+
+   \section{Исследование двухфазного управляемого выпрямителя с резистивной нагрузкой}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1u2ivs1-a0.png}
+    \caption{Напряжение во вторичной обмотке $u_2$ и ток через тиристор $i_{vs1}$ (совпадает с верхним полупериодом $u_2$) при $\alpha = 0$}.
+    \label{fig:1}
+   \end{figure}
+
+
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1u2ivs1-a90.png}
+    \caption{Напряжение во вторичной обмотке $u_2$ и ток через тиристор $i_{vs1}$ (наблюдается скачок) при $\alpha = 90$}.
+    \label{fig:1}
+   \end{figure}
+
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1unuvs-a0.png}
+    \caption{Напряжения на тиристоре (cнизу) $u_{vs1}$ и на нагрузке $u_n$ при $\alpha = 0$}.
+    \label{fig:1}
+   \end{figure}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1unuvs1-a90.png}
+    \caption{Напряжения на тиристоре (cнизу) $u_{vs1}$ и на нагрузке $u_n$ при $\alpha = 90$}.
+    \label{fig:1}
+   \end{figure}
+
+Вычислим коэффициент пульсации и построим регулировочные характеристики:
+\begin{equation}
+    K_\text{П} = \frac23\sqrt{1+4(1-\cos a)}.
+    \label{eq:1}
+\end{equation}
+\begin{table}[H]
+    \centering
+    \caption{регулировочные характеристики при различных углах регулирования при резистивной нагрузке }
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+       $\alpha, ^{\circ}$ & $U_n$, В & $U_nmax$, В & $\frac{Un(\alpha)}{Un(0)}$ & $K_\text{П}(\alpha)$ \\
+       \hline
+       0 & 8.100 & 6.543 & 1 & 0.02 \\
+       \hline
+       30 & 7.405 & 6.543 & 0.91 & 0.09 \\
+        \hline
+        60 & 5.785 & 6.543 & 0.71 & 0.018 \\
+        \hline 
+        90 & 3.744 & 6.543 & 0.46 & 0.25 \\
+        \hline
+        120 & 1.704 & 6.680 & 0.21 & 0.31  \\
+        \hline
+        150 & 0.315 & 2.650 & 0.04 & 0.34 \\
+        \hline
+        175 & 0 & 0.105 & 0 & 0.35 \\
+        \hline
+    \end{tabular}
+\end{table}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{u1.jpg}
+    \caption{Зависимость нормированной постоянной составляющей выпрямленного напряжения от угла регулирования при резистивной нагрузке}.
+    \label{fig:4}
+   \end{figure}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{k175.jpg}
+    \caption{Зависимость коэффициента пульсации от угла регулирования при резистивной нагрузке }
+    \label{fig:5}
+   \end{figure}
+
+   \section{Исследование двухфазного управляемого выпрямителя с резистивно-индуктивной нагрузкой}
+   \subsection{Осциллограммы}
+   
+   \begin{figure}[H]
+
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2u2-a0.png}
+        \caption{Осциллограмма $u_2$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2u2-a60.png}
+        \caption{Осциллограмма $u_2$, $\alpha$ = 60}
+    \end{subfigure}
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2ivs1-a0.png}
+        \caption{Осциллограмма $i_{vs1}$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2ivs1-a60.png}
+        \caption{Осциллограмма $i_{vs1}$, $\alpha$ = 60}
+    \end{subfigure}
+
+        \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2un-a0.png}
+        \caption{Осциллограмма $u_n$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2un-a60.png}
+        \caption{Осциллограмма $u_n$, $\alpha$ = 60}
+    \end{subfigure}
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uv-a0.png}
+        \caption{Осциллограмма $u_v$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uv-a60.png}
+        \caption{Осциллограмма $u_v$, $\alpha$ = 60}
+    \end{subfigure}
+
+
+   \end{figure}
+   \begin{figure}
+    \setcounter{figure}{7}
+    \setcounter{subfigure}{9}
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uvs1-a0.png}
+        \caption{Осциллограмма $u_{vs1}$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \setcounter{subfigure}{10}
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uvs1-a60.png}
+        \caption{Осциллограмма $u_{vs1}$, $\alpha$ = 60}
+    \end{subfigure}
+   \end{figure}
+Вычислим коэффициент пульсации c помощью формулы \eqref{eq:1} и регулировочные характеристики, построим графики
+
+
+\begin{table}[H]
+    \caption{регулировочные характеристики при различных углах регулирования при резистивно-индуктивной нагрузке}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+       $\alpha, ^{\circ}$ & $U_n$, В & $U_nmax$, В & $\frac{Un(\alpha)}{Un(0)}$ & $K_\text{П}(\alpha)$ \\
+       \hline
+       0 & 5.785 & 6.543 & 1 & 0 \\
+       \hline
+        10 & 5.595 & 6.543 & 0.95 & 0.03 \\
+
+        \hline
+        20 & 5.217 & 6.543 & 0.90& 0.06 \\
+        \hline 
+        30 & 4.670 & 6.543 & 0.81 & 0.09\\
+        \hline
+        40 & 3.976 & 6.680 & 0.69 & 0.12 \\
+        \hline
+        50 & 3.155 & 2.650 & 0.55& 0.14 \\
+        \hline
+        60 & 2.335 & 0.105 & 0.39 & 0.18 \\
+        \hline
+        70& 1.893 & 0.105 & 0.32 & 0.20 \\
+        \hline
+        80 & 1.577 & 0.105 & 0.28& 0.22 \\
+        \hline
+        90 & 1.262 & 0.105 & 0.22 & 0.25 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{u2.jpg}
+    \caption{Зависимость нормированной постоянной составляющей выпрямленного напряжения от угла регулирования при резистивно-индуктивной  нагрузке}.
+    \label{fig:4}
+   \end{figure}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{k90.jpg}
+    \caption{Зависимость коэффициента пульсации от угла регулирования при резистивно-индуктивной  нагрузке }
+    \label{fig:5}
+   \end{figure}
+
+\section{Исследование двухфазного управляемого выпрямителя с резистивно-индуктивной нагрузкой с обратным диодом.}
+\subsection{Осциллограммы}
+
+\begin{figure}[H]
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3u2-a0.png}
+        \caption{Осциллограмма $u_2$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3u2-a90.png}
+        \caption{Осциллограмма $u_2$, $\alpha$ = 60}
+    \end{subfigure}
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3ivs1-a0.png}
+        \caption{Осциллограмма $i_{vs1}$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3ivs1-a90.png}
+        \caption{Осциллограмма $i_{vs1}$, $\alpha$ = 60}
+    \end{subfigure}
+
+        \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3un-a0.png}
+        \caption{Осциллограмма $u_n$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3un-a90.png}
+        \caption{Осциллограмма $u_n$, $\alpha$ = 60}
+    \end{subfigure}
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3uv-a0.png}
+        \caption{Осциллограмма $u_v$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{3uv-a90.png}
+        \caption{Осциллограмма $u_v$, $\alpha$ = 60}
+    \end{subfigure}
+
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uvs1-a0.png}
+        \caption{Осциллограмма $u_{vs1}$, $\alpha$ = 0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{2uvs1-a60.png}
+        \caption{Осциллограмма $u_{vs1}$, $\alpha$ = 60}
+    \end{subfigure}
+   \end{figure}
+Вычислим коэффициент пульсации c помощью формулы \eqref{eq:1} и регулировочные характеристики, построим графики
+\begin{table}[H]
+    \centering
+    \caption{регулировочные характеристики при различных углах регулирования при резистивно-индуктивной нагрузке с обратным диодом}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+       $\alpha, ^{\circ}$ & $U_n$, В & $U_nmax$, В & $\frac{Un(\alpha)}{Un(0)}$ & $K_\text{П}(\alpha)$ \\
+       \hline
+       0 & 2.924& 0.378& 1 & 0.02 \\
+       \hline
+       30 & 2.650 & 0.420& 0.93 & 0.09 \\
+        \hline
+        60 & 2.061 & 0.462& 0.69 & 0.18 \\
+        \hline 
+        90 & 1.304 & 0.399& 0.45 & 0.25 \\
+        \hline
+        120 & 0.525 & 0.252& 0.18 & 0.31 \\
+        \hline
+        150 & 0.063 & 0.105& 0.02 & 0.34\\
+        \hline
+        175 & 0.042  & 0.063 & 0.013& 0.35 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{u3.jpg}
+    \caption{Зависимость нормированной постоянной составляющей выпрямленного напряжения от угла регулирования при резистивно-индуктивной  нагрузке c обратным диодом}
+    \label{fig:4}
+   \end{figure}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{k175.jpg}
+    \caption{Зависимость коэффициента пульсации от угла регулирования при резистивно-индуктивной  нагрузке c обратным диодом}
+    \label{fig:5}
+   \end{figure}
+\section{Исследование двухфазного управляемого выпрямителя с вольт-добавкой при резистивно-индуктивной нагрузке.}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{4u2-a90.png}
+        \caption{Осциллограмма $u_2$, $\alpha$ = 90}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{4ivs1-a90.png}
+        \caption{Осциллограмма $i_{vs1}$, $\alpha$ = 90}
+    \end{subfigure}
+
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{4uvs-a90.png}
+        \caption{Осциллограмма $u_{vs1}$, $\alpha$ = 90}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\textwidth]{4un-a90.png}
+        \caption{Осциллограмма $u_{n}$, $\alpha$ = 90}
+    \end{subfigure}
+
+        \begin{subfigure}{0.4\linewidth}
+
+        \includegraphics[width=\textwidth]{4uv-a90.png}
+        \caption{Осциллограмма $u_v$, $\alpha$ = 90}
+    \end{subfigure}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{регулировочные характеристики при различных углах регулирования при резистивно-индуктивной нагрузке с вольт-добавкой}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+       $\alpha, ^{\circ}$ & $U_n$, В & $U_nmax$, В & $\frac{Un(\alpha)}{Un(0)}$ & $K_\text{П}(\alpha)$ \\
+       \hline
+       0 & 2.924& 0.357& 1 & 0.02 \\
+       \hline
+       30 & 2.789 & 0.378& 0.91 & 0.09 \\
+        \hline
+        60 &2.482 & 0.357& 0.71 & 0.18 \\
+        \hline 
+        90 & 2.103 & 0.293& 0.46 & 0.25 \\
+        \hline
+        120 & 1.704 & 0.210 & 0.21 & 0.31 \\
+        \hline
+        150 & 1.409 & 0.189 & 0.04 & 0.34 \\
+        \hline
+        175 & 1.388 & 0.210 & 0 & 0.35 \\
+        \hline
+    \end{tabular}
+\end{table}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{u4.jpg}
+    \caption{Зависимость нормированной постоянной составляющей выпрямленного напряжения от угла регулирования при резистивно-индуктивной нагрузке с вольт-добавкой }.
+    \label{fig:4}
+   \end{figure}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{k175.jpg}
+    \caption{Зависимость коэффициента пульсации от угла регулирования при резистивно-индуктивной нагрузке с вольт-добавкой }
+    \label{fig:5}
+   \end{figure}
+
+\section{Исследование двухфазного управляемого выпрямителя с вольт-добавкой при резистивно-индуктивной нагрузке}
+   \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{iu5.jpg}
+    \caption{Зависимость постоянной составляющей выпрямленного напряжения от тока при угле регулирования α = 0 и α = 90}
+    \label{fig:5}
+   \end{figure}
+\subsection{Рассчитаем $R_\text{вых}$}
+$R_\text{вых} = −\frac{\Delta U_n}{\Delta I_n} $
+
+α = 0 : $R_\text{вых}$  = 5,2 кОм\\
+\indent α = 90 : $R_\text{вых}$  = 4,6 кОм
+\section{Вывод}
+В ходе работы были исследованы процессы в двухфазном управляемом выпрямителе при резистивной нагрузке.
+Увеличение угла регулирования α вызывает уменьшение постоянных составляющих силы тока вторичной обмотки и выпрямленного напряжения. Коэффициент пульсаций сильно возрастает с ростом угла регулирования (рис. 13, 16, 19). 
+При резистивно индуктивной нагрузке нормированная постоянная составляющая стремится к 0 при $\alpha$ = 90 (рис. 9), во всех остальных случаях (при включении оббратного диода к резистивно-индуктивной нагрузке,
+при резистивной нагрузке) нормировання постоянная составляющая затухает при $\alpha$ = 180. 
+\end{document}

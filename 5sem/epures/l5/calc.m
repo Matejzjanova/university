@@ -1,0 +1,202 @@
+clear;
+UadjL = [2.171 2.405 2.98 3.536 4.126;
+    8.528 7.742 6.032 4.299 2.38;
+    200.1 167.6 106.3 57.7 19.83
+    0.8 0.7 0.5 0.3 0.1]; 
+UadjI = [2.2 2.54 3.2 3.8 4.1;
+    29.4 -28.33 -17 -8.3 -5.2;
+    296 151.4 41.5 12.6 7.2;
+    0.8 0.7 0.5 0.3 0.2];
+UloadL = [8.089 7.373 6.933 6.52 6.24 5.994 5.7 5.5;
+    -2.35 38.35 69.98 101.2 125.5 151.4 172.6 194.8;
+    7.21 30.65 46.88 61.3 72.12 86.6 95.6 105.3;
+    repelem(0.5, 8)];
+UloadI = [-6.3 -4.7 -4 -3.5 -3.1 -2.8 -2.6 -2.4;
+    -5 -32 -47.8 -61.6 -70 -79.4 -85.8 -92.5;
+    1.6 45 59.5 72.1 81.1 90 95.6 100.9;
+    repelem(0.5, 8)   ];
+UloadPwm = [4.02 4 3.98 3.93 3.88 3.85 3.81 3.79;
+    -2.3 19.2 38.7 59.9 72.4 97.2 114 133;
+    0.25 0.25 0.255 0.26 0.265 0.3 0.35 0.4];
+UinPwm = [5 7 9 11 13 15;
+    2.8 3.23 3.6 3.77 3.8 3.95;
+    70 50 40 30 30 30;
+    0.7 0.5 0.4 0.4 0.4 0.25];
+UloadRel = [1.32 1.55 1.594 1.594 1.57 1.57 1.57 1.548;
+    -2.35 5.7 14.13 22.54 29.9 38 45.42 53.2;
+    3.05 2.45 2.14 1.82 1.64 1.484 1.37 1.27;
+    2.2 12 14 14.7 14.8 14.9 15.3 15.8];
+UinRel = [5 7 9 11 13 15;
+    1.2 1.27 1.34 1.43 1.5 1.57;
+    1.158 1.2 1.25 1.3 1.34 1.38;
+    0.35 0.27 0.228 0.194 0.175 0.155];
+
+% figure; 
+% plot(UloadI(1,:), UloadI(2,:));
+% xlim([UloadI(1,1) UloadI(1,8)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("I_н, мА");
+% 
+% figure; 
+% plot(UloadL(1,:), UloadL(2,:));
+% xlim([UloadL(1,8) UloadL(1,1)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("I_н, мА");
+% 
+% figure; 
+% plot(UloadI(1,:), UloadI(3,:));
+% xlim([UloadI(1,1) UloadI(1,8)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("I_к, мА");
+
+% figure; 
+% plot(UloadL(1,:), UloadL(3,:));
+% xlim([UloadL(1,8) UloadL(1,1)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("I_к, мА");
+
+
+% figure; 
+% plot(UloadL(1,:), UloadL(4,:));
+% xlim([UloadL(1,8) UloadL(1,1)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("\gamma");
+
+% figure; 
+% plot(UloadI(1,:), UloadI(4,:));
+% xlim([UloadI(1,1) UloadI(1,8)]);
+% grid on;
+% xlabel("U_{н}, В");
+% ylabel("\gamma");
+
+% figure;
+% plot(UadjL(1,:), UadjL(2,:));
+% xlim([UadjL(1,1) UadjL(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("U_н");
+% 
+% 
+% figure;
+% plot(UadjL(1,:), UadjL(3,:));
+% xlim([UadjL(1,1) UadjL(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("I_к");
+% 
+% figure;
+% plot(UadjL(1,:), UadjL(4,:));
+% xlim([UadjL(1,1) UadjL(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("\gamma");
+
+% figure;
+% plot(UadjI(1,:), UadjI(2,:));
+% xlim([UadjL(1,1) UadjI(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("U_н");
+% 
+% 
+% figure;
+% plot(UadjI(1,:), UadjI(3,:));
+% xlim([UadjI(1,1) UadjI(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("I_к");
+% 
+% figure;
+% plot(UadjI(1,:), UadjI(4,:));
+% xlim([UadjI(1,1) UadjI(1,5)]);
+% grid on;
+% xlabel("U_{рег}");
+% ylabel("\gamma");
+
+% figure;
+% plot(UloadPwm(1,:), UloadPwm(2,:));
+% xlim([UloadPwm(1,8), UloadPwm(1,1)]);
+% grid on;
+% xlabel("U_н, В");
+% ylabel("I_н, мА");
+% 
+% 
+% figure;
+% plot(UloadPwm(1,:), UloadPwm(3,:));
+% xlim([UloadPwm(1,8), UloadPwm(1,1)]);
+% grid on;
+% xlabel("U_н, В");
+% ylabel("\gamma");
+% 
+% figure;
+% plot(UloadRel(1,:), UloadRel(2,:));
+% xlim([UloadRel(1,1), UloadRel(1,8)]);
+% grid on;
+% xlabel("U_н, В");
+% ylabel("I_н, мА");
+% 
+% 
+% figure;
+% plot(UloadRel(1,:), UloadRel(3,:));
+% xlim([UloadRel(1,1), UloadRel(1,8)]);
+% grid on;
+% xlabel("U_н, В");
+% ylabel("T, мс");
+% 
+% figure;
+% plot(UloadRel(1,:), UloadRel(4,:));
+% xlim([UloadRel(1,1), UloadRel(1,8)]);
+% grid on;
+% xlabel("U_н, В");
+% ylabel("\gamma");
+
+% figure;
+% plot(UinRel(1,:), UinRel(2,:));
+% xlim([UinRel(1,1), UinRel(1,5)]);
+% grid on;
+% xlabel("U_{вх}, В");
+% ylabel("U_н, В");
+% 
+% 
+% figure;
+% plot(UinRel(1,:), UinRel(3,:));
+% xlim([UinRel(1,1), UinRel(1,5)]);
+% grid on;
+% xlabel("U_{вх}, В");
+% ylabel("T, мс");
+% 
+% 
+% figure;
+% plot(UinRel(1,:), UinRel(4,:));
+% xlim([UinRel(1,1), UinRel(1,5)]);
+% grid on;
+% xlabel("U_{вх}, В");
+% ylabel("\gamma");
+
+figure;
+plot(UinPwm(1,:), UinPwm(2,:));
+xlim([UinPwm(1,1), UinPwm(1,6)]);
+grid on;
+xlabel("U_{вх}, В");
+ylabel("U_н, В");
+
+
+figure;
+plot(UinPwm(1,:), UinPwm(3,:));
+xlim([UinPwm(1,1), UinPwm(1,6)]);
+grid on;
+xlabel("U_{вх}, В");
+ylabel("T, мс");
+
+
+figure;
+plot(UinPwm(1,:), UinPwm(4,:));
+xlim([UinPwm(1,1), UinPwm(1,6)]);
+grid on;
+xlabel("U_{вх}, В");
+ylabel("\gamma");

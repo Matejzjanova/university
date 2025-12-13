@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'clk'
+Slack : -3.282
+TNS   : -102.163
+
+Type  : Slow 1200mV 100C Model Setup 'Debouncer:CLK_button|Button_state'
+Slack : -1.862
+TNS   : -1.862
+
+Type  : Slow 1200mV 100C Model Hold 'clk'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'Debouncer:CLK_button|Button_state'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -83.955
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'Debouncer:CLK_button|Button_state'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV -40C Model Setup 'clk'
+Slack : -2.868
+TNS   : -82.972
+
+Type  : Slow 1200mV -40C Model Setup 'Debouncer:CLK_button|Button_state'
+Slack : -1.404
+TNS   : -1.404
+
+Type  : Slow 1200mV -40C Model Hold 'clk'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'Debouncer:CLK_button|Button_state'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -83.955
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'Debouncer:CLK_button|Button_state'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Fast 1200mV -40C Model Setup 'clk'
+Slack : -1.006
+TNS   : -18.926
+
+Type  : Fast 1200mV -40C Model Setup 'Debouncer:CLK_button|Button_state'
+Slack : -0.386
+TNS   : -0.386
+
+Type  : Fast 1200mV -40C Model Hold 'clk'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'Debouncer:CLK_button|Button_state'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -69.241
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'Debouncer:CLK_button|Button_state'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

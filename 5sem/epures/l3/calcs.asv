@@ -1,0 +1,47 @@
+
+ls = linspace(0, 175, 100);
+Un = [2.9 2.8 2.5 2.1 1.7 1.4 1.388] ;
+a = [0 30 60 90 120 150 175];
+Kp = 1/4*sqrt(1 - cosd(a))
+UnNorm = Un/Un(1)
+pk1 = polyfit(a, Kp, 2);
+Kp2 = polyval(pk1, ls);
+plot(a, Kp, 'o');
+hold on;
+plot(ls, Kp2);
+ylabel("K_{п}");
+xlabel("\alpha")
+hold off
+figure
+pu1 = polyfit(a, UnNorm, 3);
+Unn2 = polyval(pu1, ls);
+plot(a, UnNorm, 'o')
+hold on;
+ylabel("U_n(\alpha)/{U_n(0)}")
+xlabel("\alpha")
+plot(ls, Unn2)
+
+% ls = linspace(0, 90, 100);
+% Un = [5.785 5.5 5.2 4.7 4  3.2 2.3 1.9 1.6 1.262 ] ;
+% a = [0 10 20 30 40 50 60 70 80 90];
+% Kp = 1/4*sqrt(1 + cosd(a))
+% UnNorm = Un/Un(1)
+% pk1 = polyfit(a, Kp, 2);
+% Kp2 = polyval(pk1, ls);
+% plot(a, Kp, 'o');
+% hold on;
+% plot(ls, Kp2);
+% ylabel("K_{п}");
+% xlabel("\alpha")
+% hold off
+% figure
+% pu1 = polyfit(a, UnNorm, 3);
+% Unn2 = polyval(pu1, ls);
+% plot(a, UnNorm, 'o')
+% hold on;
+% ylabel("U_n(\alpha)/{U_n(0)}")
+% xlabel("\alpha")
+% plot(ls, Unn2)
+
+In = [2.04 34.74 57 79 98];
+Un = [9.6 7.195 5.185 ]

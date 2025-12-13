@@ -1,0 +1,36 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+\usepackage{subcaption}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+

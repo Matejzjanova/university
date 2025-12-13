@@ -1,0 +1,366 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+\usepackage{subcaption}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №1\\
+            по дисциплине <<Электропреобразовательные устройства>>\\
+            Тема: <<Построение схемы, заданной логическим выражением>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Матвеев А. В. \\ Самсонова Т. Е.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}} % 1.1, 1.2, 2.1, 2.2...
+\captionsetup[subfigure]{labelformat=simple}
+\setcounter{page}{2}
+\section{Исследование однотактного выпрямителя}
+Без фильтра:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{i1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{i2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{uv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \\
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ud1.png} 
+       \caption{Осциллограмма $u_{D1}$} 
+    \end{subfigure} 
+\end{figure}
+C емокстным фильтром:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ci1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ci2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{cuv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+\end{figure}
+С индуктивным фильтром:
+\begin{figure}[H] 
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{li1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{li2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{luv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{lud1.png} 
+       \caption{Осциллограмма $u_{D1}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{lun.png} 
+       \caption{Осциллограмма $u_n$}
+    \end{subfigure}
+\end{figure}
+Индуктивный фильтр с обратным диодом:
+
+\begin{figure}[H] 
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ldi1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ldi2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{lduv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ldud.png} 
+       \caption{Осциллограмма $u_{D1}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{ldun.png} 
+       \caption{Осциллограмма $u_n$}
+    \end{subfigure}
+\end{figure}
+C Г-образным фильтром:
+\begin{figure}[H] 
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{gi1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{gi2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{guv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{gud1.png} 
+       \caption{Осциллограмма $u_{D1}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{gun.png} 
+       \caption{Осциллограмма $u_n$}
+    \end{subfigure}
+\end{figure}
+\begin{table}[H]
+   \caption{Расчёт мощностей, коэффициента пульсации и габаритного коэффициента}
+    \centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+     \space & $P_1$ & $P_2$ & $P_0$ & $P_\text{ГАБ}$ & $k_\text{ГАБ}$ & $k_\text{п}$ \\ 
+     \hline
+     Без фильтра & 8 & 3.6 & 0.9 & 5.8 & 6.2 & 1.5 \\
+     \hline
+     C & 9.6 & 6 & 2.2 &7.8 & 3.5 & 0.7 \\
+     \hline
+     L & 6.6 & 0.9 & 0.07 & 3.8 & 50 & 1.21 \\
+     \hline
+     L с диодом & 6.7 & 1.5 &  0.47 & 4.12 & 8.7 & 0.35 \\
+     \hline
+     Г & 6.6 & 1.4 & 0.08 & 3.9 & 46 & 0.54 \\
+    \hline
+\end{tabular}
+
+
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{UI1.jpg}
+    \caption{График зависимости постоянной составляющей напряжения на нагрузке от постоянной составляющей тока нагрузки}
+\end{figure}
+\begin{table}[H]
+    \centering
+   \caption{Расчёт внутреннего сопротивления выпрямителя}
+\begin{tabular}{|c|c|c|c|c|c|}
+
+    \hline
+     \space & БФ & С & L & L c диодом & Г\\ 
+     \hline
+     R, Ом & 67 & 68 & 94 & 40 & 69  \\
+     \hline
+\end{tabular}
+\end{table}
+\newpage
+\section{Исследование двухтактного выпрямителя}
+Без фильтра:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2i1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2i2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2uv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \\
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2ud1.png} 
+       \caption{Осциллограмма $u_{D1}$} 
+    \end{subfigure} 
+\end{figure}
+C емокстным фильтром:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2ci1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2ci2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2cuv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+\end{figure}
+С индуктивным фильтром:
+\begin{figure}[H] 
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2li1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2li2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2luv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2lud1.png} 
+       \caption{Осциллограмма $u_{D1}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2lun.png} 
+       \caption{Осциллограмма $u_n$}
+    \end{subfigure}
+\end{figure}
+C Г-образным фильтром:
+\begin{figure}[H] 
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2gi1.png} 
+       \caption{Осциллограмма $i_1$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2gi2.png} 
+       \caption{Осциллограмма $i_2$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2guv.png} 
+       \caption{Осциллограмма $u_\text{в}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2gud1.png} 
+       \caption{Осциллограмма $u_{D1}$}
+    \end{subfigure}
+    \begin{subfigure}{0.4\linewidth}
+       \includegraphics[width=\textwidth]{2gun.png} 
+       \caption{Осциллограмма $u_n$}
+    \end{subfigure}
+\end{figure}
+\begin{table}[H]
+   \caption{Расчёт мощностей, коэффициента пульсации и габаритного коэффициента}
+    \centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+     \space & $P_1$ & $P_2$ & $P_0$ & $P_\text{ГАБ}$ & $k_\text{ГАБ}$ & $k_\text{п}$ \\ 
+     \hline
+     Без фильтра & 8.8 &  0.32 & 3.6 & 4.5 & 1.28 & 0.75 \\
+     \hline
+     C & 9.9 & 0.4 & 4.98 & 5.11 & 1.02 & 0.29 \\
+     \hline
+     L & 7.5 & 0.324& 1.92 &  3.94 & 2.05 & 0.09\\
+     \hline
+     Г & 7.7 & 0.32 & 1.88 & 4.04 & 2.14 & 0.03 \\
+    \hline
+\end{tabular}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{UI2.jpg}
+    \caption{График зависимости постоянной составляющей напряжения на нагрузке от постоянной составляющей тока нагрузки}
+\end{figure}
+\begin{table}[H]
+   \caption{Расчёт внутреннего сопротивления выпрямителя}
+    \centering
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+     \space & БФ & С & L & Г\\ 
+     \hline
+     R, Ом & 8.3 & 21 & 45 & 69  \\
+     \hline
+\end{tabular}
+\end{table}
+\newpage
+\section{Исследование сглаживающих фильтров}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{K.jpg}
+    \caption{График коэффициента пульсаций напряжения на нагрузке от постоянной составляющей тока}
+\end{figure}
+\newpage
+Определим коэффициент сглаживания пульсаций при максимальном токе нагрузки:
+\begin{table}[H]
+   \caption{Определение коэффициента сглаживания пульсаций.}
+   \centering
+\begin{tabular}{|c|c|c|}
+    \hline
+     \space & L & Г \\  
+     \hline
+     $k_\text{вх}$ & 1.19 & 1.2 \\
+     \hline
+     $k_\text{вых}$ & 0.3 & 0.14 \\
+     \hline
+     S & 3.97 & 8.57 \\
+     \hline
+\end{tabular}
+\end{table}
+\section{Вывод} 
+В ходе работы были исследованы однофазные и двухфазные выпрямители с различными фильтрами: индуктивным, емкостным, Г-образным, в различных комбинациях со включением обратных диодов, 
+построены зависимости постоянной составляющей тока в нагрузке от значения нагрузки и построена зависимость коэффициента пульсаций напряжения на нагрузке от постоянной
+составляющей тока.
+\end{document}

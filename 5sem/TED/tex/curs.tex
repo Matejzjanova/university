@@ -1,0 +1,257 @@
+\input{preamble.tex}
+\begin{document} 
+\begin{titlepage}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        Кафедра ТОР }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            КУРСОВАЯ РАБОТА\\
+            по дисциплине <<Теоретическая электродинамика>>\\
+            Тема: <<Проектирование направленного ответвителя>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}\\}
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Балландович С. В.} \\ 
+        \center Санкт-Петербург
+        
+        2024
+\end{titlepage}
+\section{ЗАДАНИЕ НА КУРСОВУЮ РАБОТУ}
+\noindent Студент Злобин М. А. \\
+Группа 3114 \\
+Тема работы: «Проектирование направленного ответвителя»
+Исходные данные: вариант 8\\
+Тип НО: ШНО;\\
+Частота: $2.3$ ГГц;\\
+$S_{1,1} = -1.5$ дБ\\
+Диэлектрик: Duroid 5870 \\
+Содержание пояснительной записки:\\
+<<Содержание>>, <<Введение>>, <<Расчет параметров ШНО>>, <<Схемотехническое моделирование ШНО>>,
+<<Электродиначеское моделирование ШНО>>, <<Выводы>>
+Предполагаемый объем пояснительной записки:\\
+Не менее \underline{\hspace{0.5cm}} страниц.\\
+\\
+Дата выдачи задания: \\
+\\
+Дата сдачи реферата: \\
+\\
+Дата защиты реферата: \\
+\\
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}\\}
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Балландович С. В.} \\ 
+\newpage
+\begin{center}
+    {\bf АННОТАЦИЯ} 
+\end{center}
+    
+
+  { В схемах СВЧ часто возникает необходимость обеспечить разделение
+ мощности для разветвления трактов или объединения 
+ мощностей от нескольких источников. 
+Направленный ответвитель — устройство для ответвления части 
+электромагнитной энергии из основного канала передачи во вспомогательный. Направленный
+ответвитель (НО) представляет собой два (иногда более) отрезка линий передачи,
+связанных между собой определённым образом, основная линия называется первичной
+, вспомогательная — вторичной. Для нормальной работы НО один из концов вторичной
+линии (нерабочее плечо) должен быть заглушён согласованной нагрузкой,
+со второго (рабочего плеча) снимается ответвлённый сигнал, в зависимости от
+того, какую волну в первичной линии надо ответвить — падающую или отражённую.
+Шлейфные НО состоят из двух отрезков полосковых линий передачи,
+соединённых между собой с помощью двух и более шлейфов, длины и расстояния, между которыми равны четверти длины волны, определённой в полосковой линии передачи.     }
+\begin{center}
+    {\bf SUMMARY}
+\end{center}
+
+In microwave circuits, it is often necessary to provide
+power separation for branching paths or combining 
+ capacities from several sources. 
+A directional coupler is a device for branching a portion
+of electromagnetic energy from the main transmission channel to an auxiliary one. A directional
+coupler (NO) is two (sometimes more) segments of transmission lines
+connected in a certain way, the main line is called the primary
+, the auxiliary is called the secondary. For normal operation, BUT one of the ends of the secondary
+The line (non—working arm) must be damped by a coordinated load,
+and a branch signal is removed from the second (working arm), depending on
+which wave in the primary line needs to be branched - incident or reflected.
+Loop cables consist of two segments of strip transmission lines
+connected to each other by means of two or more loops, the lengths and distances between which are equal to a quarter of the wavelength defined in the strip transmission line.
+
+\newpage
+\tableofcontents
+\newpage
+\section{ВВЕДЕНИЕ}
+Направленный ответвитель — устройство для ответвления части 
+электромагнитной энергии из основного канала передачи во вспомогательный. Направленный
+ответвитель (НО) представляет собой два (иногда более) отрезка линий передачи,
+связанных между собой определённым образом, основная линия называется первичной
+, вспомогательная — вторичной. Для нормальной работы НО один из концов вторичной
+линии (нерабочее плечо) должен быть заглушён согласованной нагрузкой,
+со второго (рабочего плеча) снимается ответвлённый сигнал, в зависимости от
+того, какую волну в первичной линии надо ответвить — падающую или отражённую.
+Шлейфные НО состоят из двух отрезков полосковых линий передачи,
+соединённых между собой с помощью двух и более шлейфов, длины и расстояния, между которыми равны четверти длины волны, определённой в полосковой линии передачи. С увеличением числа шлейфов 
+направленность и диапазонные характеристики шлейфового НО улучшаются.
+    \newpage
+    \section{Расчет параметров ШНО}
+    Расчитаем значения сопротивлений полосков, соединённых шлейфами $Z_{\text{1}}$ и $Z_{\text{1}}$:
+    Матрица рассеяния для двухшлейфного НО:
+
+    \begin{equation}
+      S = -\frac{1}{\sqrt{1+z_1^2}}
+      \begin{vmatrix}
+        0 & 0 & j & z_1 \\
+        0 & 0 & z_1 & j \\
+        j & z_1 & 9 & 0 \\
+        z_1 & j & 0 & 0\\
+      \end{vmatrix}
+      ,
+    \end{equation}
+    
+    где $z_i = \frac{Z_0}{Z_i}$. Условие согласования ($S(1,1) = 0$): 
+    $z_1^2 =z_2^2 - 1$.
+
+    Коэффициент деления мощности между плечами:
+    \begin{equation}
+    k = \frac{|S(3,1)|^2}{|S(4,1)|^2} = \frac1{z_1^2} = \frac{1}{z_2^2 - 1}
+      \label{k}
+    \end{equation}
+
+    Найдем k:
+
+    $S(1,2) = 10^{\frac{-1.5}{10}} = 0.701 \approx 0.7$. 
+
+    Т. к.
+
+    \begin{equation}
+      |S(1,1)^2| + |S(1,2)^2| + |S(1,3)^2| = 1, 
+    \end{equation}
+    
+    где $|S(1,1)| = 0$, получаем $S(1,3) = 0.3$.
+    
+    $k = \frac{7}{3}$, по формуле \ref{k} находим $Z_1$ и $Z_2$:
+    \begin{equation}
+      Z_1 = Z_0\sqrt{k}; \, Z_2 = Z_0\sqrt{\frac{k}{k+1}},
+    \end{equation}
+
+    $Z_1 = 76.376$ Ом;\\
+
+    $Z_2 = 41.83$ Ом.
+\section{Электротехническое моделирование}
+  Электротехническое моделирование будет выполнено в пакете AWR Design Environment.\\
+  
+  С помощью компонента TXLine расчитаем физические параметры $\frac{\lambda}4$-отрезков:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{P50.png}
+    \caption{Расчет параметры 50-омного полоска}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{P0.png}
+    \caption{Расчет параметры 76.376-омного полоска}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{P1.png}
+    \caption{Расчет параметров 41.83-омного полоска}
+  \end{figure}
+  Постоим схему ШНО:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{c-sheme.png}
+    \caption{Схема ШНО}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{layout.png}
+    \caption{Модель ШНО}
+  \end{figure}
+  Построим графики $S(1,1)$, $S(1,2)$, $S(1,3)$, $S(1,4)$ в диапазоне 1.8-2.8 ГГц с шагом 0.01 ГГц:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{s0.png} 
+    \caption{Модули коэффициентов отражения, дБ}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{phase.png} e
+    \caption{Фазы коэффициентов отражения}
+  \end{figure}
+  На графиках видно, что частота согласования и величина  $S(2,1)$ отличаются
+  от заданных. Подгоним параметры длинной линии: изменяя величину длины
+  полоска можно смещать положение резонанса, а меняя ширины W2, W3 можно
+  менять модули коэффициентов отражения:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Pch.png} e
+    \caption{Итоговые параметры}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{s1.png} e
+    \caption{Моудли коэффициентов отражения после подгонки}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{phase.png} e
+    \caption{Фазы коэффициентов после подгонки}
+  \end{figure}
+  \section{Электродинамическое моделирование}
+  Создадим элемент EM Structure и зададим параметры параметры:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{EMset.png}
+    \caption{Размеры EM Structure, соответствующие размерам ШНО}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{EMdiel.png}
+    \caption{Параметры диэлектрика в EM Structure}
+  \end{figure}
+  Впишем построенный ранее ШНО в структуру и зададим выходные порты:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{EMscheme.png}
+    \caption{ШНО в EM Structure}
+  \end{figure}
+  Электродинамическое моделирование проведем для шага сетки,
+  равного 0.1 мм, и диапазона частот 1.8-2.8 ГГц с шагом 0.1 ГГц.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{EMphase.png}
+    \caption{Модули коэффициентов отражения, дБ}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{EMmagn.png}
+    \caption{Фазы коэффициентов отражения}
+  \end{figure}
+  Уровень согласования значительно хуже, чем при схемотехническом моделирование,
+  но все равно ниже уровня -30 дБ
+  \section{Выводы}
+В ходе работы были выполнены:
+\begin{enumerate}
+  \item Расчет параметров ШНО;
+  \item Схемотехническое моделирование ШНО;
+  \item Электродинамическое моделирование ШНО;
+\end{enumerate}
+
+Шлейфный направленный ответвитель с неравным делением мощности (7/3), разработанный в данной работе, соответствует заданным требованиям на этапе схемотехнического моделирования, но демонстрирует некоторые расхождения в электродинамическом моделировании. \newpage
+\section{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\begin{enumerate}
+  \item Устройства СВЧ: конспект лекций. СПб.: Изд-во СПбГЭТУ <<ЛЭТИ>>, 2014. 92 с.
+  \item Компьютерное проектирование устройств СВЧ. СПб. Изд-во СПбГЭТУ, <<ЛЭТИ>>, 2010. 120 с.
+\end{enumerate}
+
+\end{document}
+\end{document}
+

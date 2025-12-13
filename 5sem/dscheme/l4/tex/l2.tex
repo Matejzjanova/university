@@ -1,0 +1,157 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{tikzPackets}
+\usepackage{zref}
+\usepackage{listings}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\titlelabel{\thetitle. }
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №4\\
+            по дисциплине <<Cхемотехника цифровых устройств>>\\
+            Тема: <<Исследование работы синхронных D- и J-K-триггеров>>\\
+            Вариант 8
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Овчинников М. А.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\setcounter{page}{2}
+    \section{Задание}
+    \begin{enumerate}
+         \item Собрать схему синхронного D-триггера, изучить ее временные диаграммы и блок схему (время моделирования 1400 нс, период clock 40 нс)
+         \item Собрать схему синхронного D-триггера c сигналом set, изучить ее временные диаграммы и блок схему (время моделирования 1400 нс, период clock 40 нс)
+         \item Собрать схему синхронного J-K-триггера, изучить ее временные диаграммы и блок схему (время моделирования 700 нс, период clock 20 нс)
+    \end{enumerate}
+    \section{cинхронный D-триггер}
+    Построим синхронный D-триггер на языке Verilog:
+    \lstinputlisting[numbers=left, label={list:d}, caption=Описание синхронного D-триггера на языке Verilog, language=Verilog]{../quartus/dff_my/dff_my.v}
+    \begin{figure}[h]
+      \center 
+      \includegraphics[width=0.75\linewidth]{dff2.png}      
+      \caption{схема синхронного d-триггера, созданного в текстовом редакторе}
+    \end{figure}
+
+    Результат работы компонента RTL-Viewer:
+    \begin{figure}[h]
+      \center 
+      \includegraphics[width=0.75\linewidth]{dffrtl.png}      
+      \caption{Схема синхронного D-триггера}
+      \label{fig:dffrtl}
+    \end{figure}
+    
+    Из рис. \ref{fig:dffrtl}видно, что схема такого триггера
+    аналогична схеме асинхронного DL-триггера, с тем отличием, что в роли сигнала L теперь выступает спад тактового сигнала
+    clock.
+    \section{cинхронный D-триггер с сигналом set}
+    Построим синхронный D-триггер с сигналом set на языке Verilog:
+    \lstinputlisting[numbers=left, label={list:ds}, caption=Описание синхронного D-триггера с сигналом set на языке Verilog, language=Verilog]{../quartus/dff_myq/dff_my.v}
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{dffq2.png}      
+      \caption{Временная диаграмма синхронного D-триггера c сигналом set, созданного в текстовом редакторе}
+    \end{figure}
+
+    Результат работы компонента RTL-Viewer:
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{dffqrtl.png}      
+      \caption{Схема синхронного D-триггера c сигналом set}
+    \end{figure}
+    Из листинга видно, что сигнал set является асинхронным, т. к. находится в блоке always (управление в него передается только в момент спада тактового сигнала)
+    \section{синхронный J-K-триггер}
+    Построим синхронный J-K-триггер: 
+    \lstinputlisting[numbers=left, label={list:ds}, caption=Описание синхронного J-K-триггер на Verilog, language=Verilog]{../quartus/jkff_my/jkff_my.v}
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{kjff2.png}      
+      \caption{Временная диаграмма синхронного J-K-триггера, созданного в текстовом редакторе}
+    \end{figure}
+
+    Результат работы компонента RTL-Viewer:
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{jkrtl.png}      
+      \caption{Схема синхронного J-K-триггера} 
+    \end{figure}
+    Cхема реализована с помощью блока Mux -- мультиплексора, на вход поступают данные из двух последовательных шин,
+    и в зависимости от значения битов SEL (J и K) выбирается нужный бит шины DATA. Выход мультиплексора задерживается защелкой
+    до нужного перепада тактового сигнала.
+    \section{J-K-триггер с подавление дребезга контактов}
+    
+
+    Построим синхронный J-K-триггер c подавлением дребезга контантов на языке Verilog:
+    
+    \lstinputlisting[numbers=left, breaklines=true, label={list:d}, caption=Описание синхронного J-K-триггера на языке Verilog, language=Verilog]{../lab3_new.v}
+    Результат работы компонента RTL-Viewer:
+
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{dbrtl.png}      
+      \caption{Схема синхронного J-K-триггера c подавление дребезга контактов} 
+    \end{figure}
+
+    Логика Debouncer основана на счете тактов, в течение которых кнопка пребывает в измененном состоянии.
+    Если число таких тактов, идущих подряд, составляет $2^{18}$, то кнопка считается нажатой, в случае же дребезга изменения не применяются.
+    Также в коде Debouncer используются регистры Button\_sync\_0 и Button\_sync\_1, второй на один такт запаздывает относительно первого, и служат они для поадвления
+    метастабильного состояния -- дается дополнительный такт на ее разрешение.
+    В остальном код триггера отличается от описанного ранее синхронного J-K-триггера лишь тем, что в нем вместо объединения J и K в последовательную шину
+    используются логические выражения.
+    \section*{Вывод}
+
+    В ходе работы были исследованы синхронные D-триггер, D-триггер c синхронным set сигналом,
+    J-K-триггер, построены их временные диаграммы и схемы. Также был изучен код на Verilog,
+    описывающий подавление дребезга контактов синхронного J-K-триггера. Его прицнип работы состоит в считывании с помощью специального
+    модуля Debouncer числа тактов, в течении которых кнопка находится в измененном состоянии, и только при сохранении этого состоянии в течении
+    определенного числа тактов (17) подряд, состояние кнопки (выходной сигнал Debouncer) меняется на противоположное, в остальном логика работы идентична
+    обычному синхронному J-K-триггеру.
+\end{document}

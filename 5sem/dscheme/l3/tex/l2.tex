@@ -1,0 +1,148 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{tikzPackets}
+\usepackage{zref}
+\usepackage{listings}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\titlelabel{\thetitle. }
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №3\\
+            по дисциплине <<Cхемотехника цифровых устройств>>\\
+            Тема: <<Исследование работы асинхронных RS- и DL-триггеров>>\\
+            Вариант 8
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Овчинников М. А.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\setcounter{page}{2}
+    \section{Задание}
+    \begin{enumerate}
+         \item Собрать и схему RS-триггера в текстовом редакторе, изучить схему с помощью RTL-Viewer
+         \item  Построить временные диаграммы с учетом задержек (время моделирования задать 450 нс) 
+         \item Проделать все то же самое в графическом редакторе
+         \item Cобрать схему асинхронного DL-триггера в текстовом редакторе, изучить схему с помощью RTL-Viewer
+         \item Построить временную диаграмму с учетом задержек (время моделирования задать 300 нс)
+    \end{enumerate}
+    \section{асинхронный RS-триггер в текстовом редакторе}
+    \lstinputlisting[numbers=left, label={list:rs}, caption=Описание асинхронного RS-триггера на языке Verilog, language=Verilog]{../s_r_ff.v}
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{rtl1.png}      
+      \label{fig:1}
+      \caption{Схема асинхронного RS-триггера, созданного в текстовом редакторе}
+    \end{figure}
+
+    В схеме использован блок LATCH ("защелка"), блок по факту и реализует логику RS-триггера, переводя выходной сигнал q в 0 при
+    сигнале на ACLR и в 1 при сигнале на PRESET. При это блоки "или" и "и" перед защелкой служат для обхода запрещенного состояния:
+    сигналы на ACLR и PRESET не могут быть одновременно 1. На сигнал DATAIN подается 0, триггер от него не зависит.
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{d1.png}      
+      \label{fig:2}
+      \caption{Временная диаграмма асинхронного RS-триггера, созданного в текстовом редакторе}
+    \end{figure}
+    На временной диаграмме видно, что в запрещенном режиме ($R=S=1$) сигнал $q=1$, сигнал $not\_q = 0$. 
+    \section{асинхронный RS-триггер в графическом редакторе}
+    Построим асинхронный RS-триггер в базисе "и-не" в графическом редакторе:
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{sheme.png}      
+      \label{fig:nand}
+      \caption{Построение асинхронного RS-триггера в базисе и-не}
+    \end{figure}
+    Результат работы компонента RTL-Viewer:
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{rtl2.png}      
+      \label{fig:3}
+      \caption{Схема асинхронного RS-триггера, созданного в графическом редакторе}
+    \end{figure}
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{d2.png}      
+      \label{fig:5}
+      \caption{Временная диаграмма асинхронного RS-триггера, созданного в графическом редакторе}
+    \end{figure}
+    Видно, что в запрещенном состянии сигналы $q$ и $not\_q$ не являются инверсными, оба 1.
+\section{Aсинхронный DL-триггер}
+    Описание асинхронного DL-триггера на языке Verilog:
+    \lstinputlisting[numbers=left, caption=Описание асинхронного DL-триггера на языке Verilog, label={list:dl} language=Verilog]{../d_l_ff.v}
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{rtldl.png}      
+      \label{fig:s}
+      \caption{Схема асинхронного DL-триггера}
+    \end{figure}
+
+    Также, как и в случае с RS-триггером, использльзован блок LATCH, выполняющий функции DL-триггера (входы 
+    DATAIN и LATCH\_ENABLE соответствуют входам data и load). 
+    На вход ACLR подается 0, т. к. выход триггера устанавливается в 0 комбинацией других сигналов.
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{tdda2.png}      
+      \label{fig:dld}
+      \caption{Временная диаграмма асинхронного RS-триггера, созданного в графическом редакторе}
+    \end{figure}
+    При замене в 5 строчке @always(loar or data) на @always(data), изменений замечено не было:
+    \begin{figure}[H]
+      \center 
+      \includegraphics[width=0.75\linewidth]{tdda2.png}      
+      \label{fig:dld2}
+      \caption{Временная диаграмма асинхронного RS-триггера}
+    \end{figure}
+    Схема RTL-Viewer также совпала.
+    \section*{Вывод}
+    В ходе работы были построены две модели RS-триггера: в текстовом и графическом редакторах, построены их временные диаграммы и схемы. Они отличаются лишь поведеним триггера в запрещенном состоянии.
+    Также в текстовом редакторе был построен DL-триггер, построена его временная диаграмма и схемa. При измении списка чувствительности always его поведение не изменяется.
+\end{document}

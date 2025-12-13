@@ -1,0 +1,7 @@
+|dff_my
+clock => q~reg0.CLK
+Data => q.DATAA
+set => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,45 @@
+# do l32.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:55:11 on Nov 17,2025
+# vlog -work work l32.vo 
+# -- Compiling module d_l_ff
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	d_l_ff
+# End time: 06:55:11 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 06:55:11 on Nov 17,2025
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module d_l_ff_vlg_vec_tst
+# 
+# Top level modules:
+# 	d_l_ff_vlg_vec_tst
+# End time: 06:55:11 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.d_l_ff_vlg_vec_tst 
+# Start time: 06:55:11 on Nov 17,2025
+# Loading work.d_l_ff_vlg_vec_tst
+# Loading work.d_l_ff
+# Loading work.hard_block
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# SDF 10.5b Compiler 2016.10 Oct  5 2016
+# Loading instances from l32_v.sdo
+# Loading timing data from l32_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /d_l_ff_vlg_vec_tst File: Waveform.vwf.vt
+# after#26
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Note: $finish    : Waveform.vwf.vt(46)
+#    Time: 300 ns  Iteration: 0  Instance: /d_l_ff_vlg_vec_tst
+# End time: 06:55:11 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7

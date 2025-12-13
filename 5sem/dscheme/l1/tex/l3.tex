@@ -1,0 +1,142 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{zref}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\titlelabel{\thetitle. }
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №1\\
+            по дисциплине <<Cхемотехника цифровых устройств>>\\
+            Тема: <<Построение схемы, заданной логическим выражением>>\\
+            Вариант 8
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Овчинников М. А.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\setcounter{page}{2}
+
+   \section{Задание}
+   Дано логическое выражение $\overline{x_3 \land x_2} \lor x_1$; 
+   \begin{enumerate}
+    \item Построить таблицу истинности для данного выражения
+    \item Собрать в графическом редакторе схему цифрового устройства, 
+    работа которого описывается данным логическим выражением.
+    \item Показать результат работы компонента RTL Viewer.
+    \item Построить временные диаграммы, иллюстрирующие работу устройства, при наличии и отсутствии задержек. 
+   \end{enumerate}
+   \section{Таблица истинности}
+    Построим таблицу истинности для заданного логического выражения:
+    Taблица 1. Таблица истинности для выражения $  \overline{x_3 \land x_2} \lor x_1 $.
+   \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            $x_1$ & $x_2$ & $x_3$ & $x_3 \land x_2 $ &$\overline{x_3 \land x_2}$ & $\overline{x_3 \land x_2} \lor x_1$\\
+            \hline
+             0 & 0 & 0 & 0 & 1 & 1 \\
+             \hline
+             0 & 0 & 1 & 0 & 1 & 1  \\
+             \hline
+             0 & 1 & 0 & 0 & 1 & 1 \\ 
+             \hline
+             0 & 1 & 1 & 1 & 0 & 0 \\
+             \hline
+             1 & 0 & 0 & 0 & 1 & 1\\
+             \hline
+             1 & 0 & 1 & 0 & 1 & 1 \\
+             \hline
+             1 & 1 & 0 & 0 & 1 & 1 \\
+             \hline
+             1 & 1 & 1 & 1 & 0 & 1 \\
+             \hline
+        \end{tabular}
+        \label{tab:1}
+   \end{table} 
+\newpage
+\section{Блок-схема}
+Построим блок-схему с помощью редактора блок-схем в Quartus:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{buildscheme.png}
+    \caption{Схема логического выражения, построенная в редакторе блок-схем}
+    \label{fig:0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{scheme}
+
+    \caption{Блок-схема исследуемого выражения, построенная RTL Viewer}
+    \label{fig:1}
+\end{figure}
+Построим временные диаграммы с задержкой и без:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{td}
+    \caption{Временная диаграмма без задержки}
+    \label{fig:2}
+\end{figure}
+    Выходной сигнал {\it out} соответствует последнему столбцу в таблице истинности.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{tdd}
+    \caption{Временная диаграмма с задержкой}
+    \label{fig:3}
+\end{figure}
+    Подобная диагрмма моделирует реальную систему, в которой задержка выходного сигнала возникает из-за протекания 
+    в ПЛИС переходных процессов, обусловленных паразитными емкостями {\it p-n} переходов.
+\section*{Вывод}
+В ходе выполнения работы в графическом редакторе программы \\ Quartus было составлено логическое выражение, которым 
+был \space ''прошит'' \space ПЛИС семейства Cyclone IV E. 
+Были проанализированы временные диаграммы, соответствующие идеальной модели и реальному 
+устройству, в котором протекают переходные процессы.
+\end{document}

@@ -1,0 +1,147 @@
+% \documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+% \DeclareMathSizes{14}{14}{14}{14}
+% \usepackage{extsizes}
+% \usepackage{graphicx}
+% \graphicspath{{../}}
+% \usepackage[russian]{babel} % задаёт русский как основной язык текста
+% \usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+% \usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+% \usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+% \setcounter{secnumdepth}{0}
+% \usepackage{mathptmx} 
+% \usepackage{fontspec}
+% \usepackage{subcaption}
+%
+% \setmainfont{Times New Roman}
+%
+%
+% \usepackage{geometry} % задаёт поля 
+% \geometry{left=3cm} % левое — 3 см
+% \geometry{right= 1.5cm} % правое — 1,5 см
+% \geometry{top=2cm} % верхнее — 2 см
+% \geometry{bottom=2cm} % нижнее — 2 см
+% \usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+% \usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+% \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+% \usepackage{float}
+% \usepackage{array}
+% \usepackage{tabularx}
+% \usepackage{titlesec}
+% \usepackage{zref}
+% \titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+% \titleformat{\subsection}{\centering\normalfont\bfseries}{\thesubsection.}{0.5em}{}  % Исправлено
+% \titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesubsubsection.}{0.5em}{}
+% \setlength\parindent{1.25cm}
+% \setcounter{secnumdepth}{3}
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра БЖД\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №4\\
+            по дисциплине <<Безопасность жизнедеятельности>>\\
+            Тема: <<Исследование параметров производственного шума и 
+            определение  эффективности мероприятий по защите от него>>\\
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студенты гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.\\ Тимошко С. И.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Демидович О. В. } \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+
+Цель работы -- исследование параметров производственного шума на соответствие требованиям 
+санитарных норм и изучение основных принципов по эффективной защите от шума.
+
+\section{Исследование зависимости параметров шума от частоты}
+Спектр фонового шума не превышает ПС-45, но превышает предельный эквивалентный уровень на
+0.6 дБА.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{bg-1.jpg}
+  \caption{Шум фона}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{src.jpg}
+  \caption{Шум источника с фоновой поправкой}
+\end{figure}
+Шум является среднечастотным.
+Спектр шума источника превышает ПС-75, превышение предельного эквивалентного уровня 
+составляет 25.1 дБА.
+\section{Исследование средств защиты от шума}
+Спектрограммы шума после применения различных средств защиты:
+(кожух с шумопоглощением -- сокращение для обозначение кожуха с шумопоглощающим материалом)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{s.jpg}
+  \caption{Стальной щит}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{case.jpg}
+  \caption{Кожух без шумопоглощения}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{scase.jpg}
+  \caption{Кожух с шупомоглощением}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{shield-big.jpg}
+  \caption{Стальной щит c отверстием}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{shield-holes.jpg}
+  \caption{Стальной щит c перфорацией}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{shiled-wood.jpg}
+  \caption{Щит из оргалита}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{case-and-shield.jpg}
+  \caption{Стальной щит и кожух с шупомоглощением}
+\end{figure}
+Из графиков видно, что в ПС-75 полностью уложился лишь стальной щит
+с кожухом с шупомоглощением, но предельный уровень все равно был превышен на 0.2 дБА. Также близок к ПС-75 просто кожух с шупомоглощением.
+Наименьшие показатели защиты у щита с большим отверстием.
+\section{Эффективность различных мероприятий по шумоглушению}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\linewidth]{L.jpg}
+  \caption{Эффективность различных мероприятий по шумоглушению}
+\end{figure}
+Эффективность вычисляется по формуле $L_\text{эфф} = L_1 - L_2$, где $L_1$ -- уровень звукового давления до пременения мер по шумоглушению,
+$L_2$ -- после применения мер.
+
+Из графика видно, что наибольшей эффективностью обладает сочетание кожуха
+с шумопоглощением и стального щита. На средних и высоких частотах также высокая
+эффективность у кожаха с шумопоглощением и без средств экранирования.
+\section{Вывод}
+В ходе работы были исследованы частотые характеристики шума, построены спектрограммы
+фонового и имитации промышленного шумов. Также была исследована эффективность различных мероприятий
+по шумоглушению: наибольшей эффективностью обладает применения шумопоглощения (кожух с шумопоглощаящим материалом)
+и шумоотражения (стальной щит). Только примение данных средств позволило спектрограмме шума попасть ниже кривой ПС-75.
+\end{document}
+
+

@@ -1,0 +1,262 @@
+\documentclass[a4paper,14pt ]{article} % можно использовать кегель 8-12, 14, 17 и 20 пунктов
+\DeclareMathSizes{14}{14}{14}{14}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\graphicspath{{../}}
+\usepackage[russian]{babel} % задаёт русский как основной язык текста
+\usepackage[T2A]{fontenc} % задаёт кириллическую кодировку шрифта
+\usepackage{cmap} % обеспечивает нормальное копирование и поиск русского текста в pdf 
+\usepackage[utf8]{inputenc} % определяет юникодную кодировку самого .tex-файла
+\setcounter{secnumdepth}{0}
+\usepackage{mathptmx} 
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}
+
+
+\usepackage{geometry} % задаёт поля 
+\geometry{left=3cm} % левое — 3 см
+\geometry{right= 1.5cm} % правое — 1,5 см
+\geometry{top=2cm} % верхнее — 2 см
+\geometry{bottom=2cm} % нижнее — 2 см
+\usepackage{setspace} \onehalfspacing % задаёт «полуторный» межстрочный интервал 
+\usepackage{indentfirst} % автоматически добавляет отступ в каждый новый абзац
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext, physics}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{tikzPackets}
+\usepackage{zref}
+\usepackage{listings}
+\titleformat{\section}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsubsection}{\centering\normalfont\bfseries}{\thesection.}{0.5em}{}
+\setlength\parindent{1.25cm}
+\setcounter{secnumdepth}{3}
+\titlelabel{\thetitle. }
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+        {\bf  МИНОБРНАУКИ РОССИИ\\
+        САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ\\
+        ЭЛЕКТРОТЕХНИЧЕСКИЙ УНИВЕРСТИТЕТ\\
+        <<ЛЭТИ>> ИМ. В. И. УЛЬЯНОВА (ЛЕНИНА)\\
+        кафедра РС\\
+    
+        }
+    \end{center}
+    \vfill
+        {
+        \begin{center}
+            \bfseries
+            Отчет по лабораторной работе №2\\
+            по дисциплине <<Cхемотехника цифровых устройств>>\\
+            Тема: <<Построение схемы заданной диаграммой Вейча>>\\
+            Вариант 8
+        \end{center}
+        }
+        \
+    \vfill
+        {\noindent\parbox{4cm}{Студент гр. 3114}  \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{4cm}{\raggedleft Злобин М. А.}} \\\\
+        \parbox{4cm}{Преподаватель} \hfill \parbox{3cm}{\rule{3cm}{0.15mm}} \hfill \parbox{5cm}{\raggedleft Овчинников М. А.} \\ 
+        \center Санкт-Петербург
+        
+        2025
+\end{titlepage}
+\setcounter{page}{2}
+
+    \section{Задание}
+    \begin{enumerate}
+         \item Найти МДНФ переключательной функции, заданной в виде диаграммы Вейча 
+         \item  Построить таблицу истинности найденной МДНФ.   
+         \item Собрать в графическом редакторе схему цифрового устройства, работа которого описывается найденной ранее МДНФ и показать результаты работы компонента RTL Viewer. 
+         \item Смоделировать это же цифровое устройство в текстовом редакторе с помощью языка описания аппаратуры Verilog 
+         и также показать результат работы RTL Viewer.
+         \item Сравнить результаты работы компонента RTL Viewer для устройства, смоделированного в двух редакторах: графическом и текстовом. 
+         \item  Построить временные диаграммы при наличии и отсутствии задержек.  
+    \end{enumerate}
+    \begin{figure}[H] 
+        \centering
+        \begin{tikzpicture}<br>
+        %\draw[help lines] (-1, -1) grid (6, 6);
+        \draw (0,0) grid (4,4); 
+        \draw (0.5, 3.5) node {1}; 
+        \draw (1.5, 3.5) node {1}; 
+        \draw (1.5, 3.5 - 1) node {1}; 
+        \draw (1.5 - 1, 3.5 - 1) node {1}; 
+        \draw (1.5 + 2, 3.5) node {1}; 
+        \draw (1.5 + 1, 3.5) node {1}; 
+        \draw (1.5 + 1, 3.5) node {1}; 
+        \draw (3.5, 0.5) node {1}; 
+        \draw (2.5, 0.5) node {1}; 
+        \draw (0.5, 0.5) node {1}; 
+
+        \draw (2.5, 2.5) node {0};
+        \draw (3.5, 2.5) node {0};
+        \draw (.5, 1.5) node {0};
+        \draw (1.5, 1.5) node {0};
+        \draw (2.5, 1.5) node {0};
+        \draw (3.5, 1.5) node {0};
+        \draw (1.5, 0.5) node {0};
+        
+        
+        
+        \draw (0,4.3) --node[midway, above]{$x_4$} (2,4.3);
+        \draw (-0.3,4) --node[midway, left]{$x_2$} (-0.3,2);
+        \draw (1,-0.3) --node[midway, below]{$x_3$} (3,-0.3);
+        \draw (4.3,1) --node[midway, right]{$x_1$} (4.3,3);
+    \end{tikzpicture}
+    \caption{Диаграмма Вейча}
+    \label{fig:1}
+    \end{figure} 
+
+    \section{Построение МДНФ}
+    \begin{figure}[H] 
+        \centering
+        \begin{tikzpicture}<br>
+        %\draw[help lines] (-1, -1) grid (6, 6);
+        \draw (0,0) grid (4,4); 
+        \draw (0.5, 3.5) node {1}; 
+        \draw (1.5, 3.5) node {1}; 
+        \draw (1.5, 3.5 - 1) node {1}; 
+        \draw (1.5 - 1, 3.5 - 1) node {1}; 
+        \draw (1.5 + 2, 3.5) node {1}; 
+        \draw (1.5 + 1, 3.5) node {1}; 
+        \draw (1.5 + 1, 3.5) node {1}; 
+        \draw (3.5, 0.5) node {1}; 
+        \draw (2.5, 0.5) node {1}; 
+        \draw (0.5, 0.5) node {1}; 
+        
+        \draw (0,4.3) --node[midway, above]{$x_4$} (2,4.3);
+        \draw (-0.3,4) --node[midway, left]{$x_2$} (-0.3,2);
+        \draw (1,-0.3) --node[midway, below]{$x_3$} (3,-0.3);
+        \draw (4.3,1) --node[midway, right]{$x_1$} (4.3,3);
+        
+        \draw (0.1, 3.9) rectangle (1.9, 2.1);
+        \draw[line width=2pt] (0.1, 0) -- (0.1, 0.9) -- (0.9, 0.9) -- (0.9, 0);
+        \draw[line width=2pt] (0.1, 4) -- (0.1, 3.1) -- (0.9, 3.1) -- (0.9, 4);
+
+
+        \draw (2.1, 4) -- (2.1, 3.1) -- (3.9, 3.1) -- (3.9, 4);
+        \draw (2.1, 0) -- (2.1, 0.9) -- (3.9, 0.9) -- (3.9, 0);
+        %\draw (0.1, 0.9) rectangle (0.9, 0); 
+        
+        \draw (2.5, 2.5) node {0};
+        \draw (3.5, 2.5) node {0};
+        \draw (.5, 1.5) node {0};
+        \draw (1.5, 1.5) node {0};
+        \draw (2.5, 1.5) node {0};
+        \draw (3.5, 1.5) node {0};
+        \draw (1.5, 0.5) node {0};
+    
+    \end{tikzpicture}
+    \caption{Объединение кубов}
+        
+    \label{fig:1}
+    \end{figure} 
+    Запишем МДНФ:
+    \begin{equation}
+        y = (x_2 \land x_4) \lor (\overline{x_4} \land \overline{x_1}) \lor 
+        (\overline{x_1} \land \overline{x_3}).
+        \label{eq:1}
+    \end{equation} 
+    \section{Таблица истинности}
+    Построим таблицу истинности для найденной МДНФ:
+    \begin{table}[H]
+        \caption{Таблица истинности для логической функции $(x_4 \land x_4) \lor (\overline{x_4} \land \overline{x_1}) \lor (\overline{x_1} \land \overline{x_3})$.}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_2 \land x_4$ & $\overline{x_4} \land \overline{x_1}$ & $\overline{x_1} \land \overline{x_3}$ & $(x_2 \land x_4) \lor (\overline{x_4} \land \overline{x_1}) \lor (\overline{x_1} \land \overline{x_3})$ \\
+            \hline
+            0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+            \hline
+            0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\
+            \hline
+            0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 \\
+            \hline
+            0 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\
+            \hline
+            1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+            \hline
+            1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\
+            \hline
+        \end{tabular} 
+        \label{tab:truth_table}
+    
+    \end{table}
+    \newpage
+    \section{Блок-диаграмма}
+    Построим блок-схему устройства, реализующую МДНФ используя редактор блок-схем Quartus:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{blockscheme.png}
+        \caption{Блок диаграмма, построенная в редакторе Quartus}
+        \label{fig:1}
+    \end{figure}
+    Воспользуемся компонентом RTL Viewer:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{td.png}
+        \caption{Блок диаграмма построенная RTL viewer}
+        \label{fig:1}
+    \end{figure}
+    \section{Моделирование с помощью Verilog}
+    Cмоделируем устройство, описываемой МДНФ (1) с помощью языка описания аппарутру Verilog.
+    Код Verilog:
+    \lstinputlisting[language=Verilog]{SystemVerilog1.sv}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{td2.png}
+        \caption{Блок диаграмма построенная RTL viewer}
+        \label{fig:2}
+    \end{figure}
+    Схемы \ref{fig:1} и \ref{fig:2} отличаются расположением переменных и вентилей, но 
+    описывают одно и то же выражение.
+    \section{Временные диаграммы}
+    Построим временные диаграммы c задержкой и без для устройства, описываемого МДНФ (1):
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{time}
+        \caption{Временная диаграмма без задержки на выходе}
+        \label{fig:3}
+    \end{figure}
+    Расположение переменных и значения выхода {\it y1} соответствуют таблице истинности.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{timed}
+        \caption{Временная диаграмма c задержкой на выходе}
+        \label{fig:4}
+    \end{figure}
+    Временная диаграмма с задержкой, обусловленной протеканием в ПЛИС переходных процессов.
+    \section*{Вывод}
+    В ходе работы по диаграмме Вейча была составлена МДНФ и построена соответствующая таблица истинности.
+    Двумя способами было смоделировано цифровое устройство, описываемое работой данной МДНФ: с помощью графического редактора
+    и с помощью языка описания аппаратуры Verlog. Результаты работы компонента RTL Viewer в двух случаях представлены на рисунках
+    \ref{fig:1} и \ref{fig:2}. Для модели на Verilog были получены временные диаграммы (\ref{fig:3}, \ref{fig:4}), \space отражающие как идеальный случай, так и 
+    реальное устройство с наличием задержки на выходе.
+
+\end{document}
